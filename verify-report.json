@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "https://verify.puredivineenergy.com/",
+    "https://verify.puredivineenergy.com/admin/login",
+    "https://verify.puredivineenergy.com/verify"
+  ],
+  "assets": 12,
+  "failures": [
+    {
+      "url": "https://fonts.googleapis.com/",
+      "error": "HTTP 404"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "https://course.puredivineenergy.com/",
+    "https://course.puredivineenergy.com/package/reiki-level-1",
+    "https://course.puredivineenergy.com/checkout/reiki-level-1",
+    "https://course.puredivineenergy.com/package/reiki-level-2",
+    "https://course.puredivineenergy.com/checkout/reiki-level-2",
+    "https://course.puredivineenergy.com/package/reiki-level-3-and-master-teacher-level-4",
+    "https://course.puredivineenergy.com/checkout/reiki-level-3-and-master-teacher-level-4",
+    "https://course.puredivineenergy.com/package/ricky-grandmaster-full-course",
+    "https://course.puredivineenergy.com/checkout/ricky-grandmaster-full-course",
+    "https://course.puredivineenergy.com/package/basic-colour-prana-healing-course",
+    "https://course.puredivineenergy.com/checkout/basic-colour-prana-healing-course",
+    "https://course.puredivineenergy.com/package/advance-prana-energy",
+    "https://course.puredivineenergy.com/checkout/advance-prana-energy"
+  ],
+  "assets": 9,
+  "failures": [
+    {
+      "url": "https://fonts.googleapis.com/",
+      "error": "HTTP 404"
+    }
+  ]
+}

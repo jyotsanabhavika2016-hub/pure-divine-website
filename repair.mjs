@@ -1,0 +1,7 @@
+import fs from 'node:fs/promises';import path from 'node:path';import crypto from 'node:crypto';
+const root=path.resolve('dist');async function walk(d){let out=[];for(const e of await fs.readdir(d,{withFileTypes:true})){let p=path.join(d,e.name);out.push(...(e.isDirectory()?await walk(p):[p]))}return out}
+for(const f of await walk(root)){if(!f.endsWith('.html'))continue;let t=await fs.readFile(f,'utf8');const prefix=f.includes(path.sep+'verify'+path.sep)?'/verify':f.includes(path.sep+'learn'+path.sep)?'/learn':'';const origin=prefix==='/verify'?'https://verify.puredivineenergy.com':prefix==='/learn'?'https://course.puredivineenergy.com':'https://puredivineenergy.com';
+for(const m of t.matchAll(/(?:src|href)=["']([^"']+)["']/g)){const raw=m[1];if(raw.startsWith('/assets/')||!raw.startsWith('/')||!path.extname(raw.split('?')[0]))continue;let p=raw.startsWith(prefix+'/')?raw.slice(prefix.length):raw;let u=origin+p;let ext=path.extname(new URL(u).pathname);const name='/assets/'+crypto.createHash('sha256').update(u).digest('hex').slice(0,20)+ext;try{await fs.stat(path.join(root,name));t=t.split(raw).join(name)}catch{}}
+t=t.replace(/\s+srcset=["'][^"']*["']/g,'').replaceAll('https://course.puredivineenergy.com','/learn/').replaceAll('https://verify.puredivineenergy.com','/verify/');
+if(prefix==='/learn'){t=t.replaceAll('href="#packages"','href="/learn/#packages"');t=t.replace(/(<a[^>]*href=)["']#["']([^>]*>Certificate)/g,'$1"/verify/"$2').replace(/(<a[^>]*href=)["']#["']([^>]*>Contact)/g,'$1"/contact/"$2')}
+await fs.writeFile(f,t)}

@@ -1,0 +1,3 @@
+import fs from 'node:fs/promises';import path from 'node:path';
+const root=path.resolve('dist');for(const p of ['category/divine-healing/feed','category/uncategorized/feed','author/puredivineenergy/feed']){const target=path.resolve(root,p);if(!target.startsWith(root+path.sep))throw Error('Invalid target');await fs.rm(target,{recursive:true,force:true})}
+async function walk(d){for(const e of await fs.readdir(d,{withFileTypes:true})){const p=path.join(d,e.name);if(e.isDirectory())await walk(p);else if(p.endsWith('.html')){let t=await fs.readFile(p,'utf8');t=t.replace(/<link[^>]*rel=["']pingback["'][^>]*>/g,'');await fs.writeFile(p,t)}}}await walk(root);

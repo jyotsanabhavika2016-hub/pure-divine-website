@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/901544b03910bc94995f.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url(/assets/c2fd9aeec27057bd6495.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(/assets/c6305cd37cba4895eaf7.ttf) format('truetype');
+}
