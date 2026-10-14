@@ -1,0 +1,11 @@
+/* Small accessibility safeguards; retain reference geometry and branding. */
+:root{--frontend-focus:#b68a2b}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--frontend-focus);outline-offset:4px}
+.pde-menu .menu-link[aria-current="page"],.pde-mobile-menu-list .menu-link[aria-current="page"]{color:#b6924a}
+.pde-chat-launcher{cursor:pointer}
+.frontend-form-status{margin:1rem 0 0;padding:1rem;border:1px solid #dccdb7;border-radius:14px;background:#fffaf4;color:#402744;font-size:14px;line-height:1.6}
+@media(max-width:767px){
+  .blog #primary .ast-row,.archive #primary .ast-row{margin-left:0;margin-right:0}
+  .blog #primary .ast-article-post,.archive #primary .ast-article-post{padding-left:0;padding-right:0}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

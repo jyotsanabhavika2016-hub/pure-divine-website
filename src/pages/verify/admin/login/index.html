@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login — PureDivine Energy</title>
+    <meta name="description" content="Verify your PureDivine Energy healing course certificate instantly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="/assets/af676219824285083bd9.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/inline-42aebf3c676e.css">
+        <link rel="stylesheet" href="/assets/styles/inline-7789fb4a5310.css">
+<link rel="stylesheet" href="/assets/styles/frontend.css">
+</head>
+
+<body>
+    <!-- include:verification-admin-header.html -->
+
+    <main>
+            <div class="login-wrap">
+        <div class="login-card">
+            <div class="login-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+            </div>
+            <h2>Admin Login</h2>
+            <p>Sign in to manage certificates</p>
+
+            <form method="POST" action="/verify/admin/login">
+                                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" value=""
+                        required autofocus>
+                                    </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem">
+                    Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+    </main>
+
+    <!-- include:verification-footer.html -->
+    <script type="module" src="/assets/scripts/frontend.js"></script>
+<script type="module" src="/assets/scripts/chat.js"></script>
+</body>
+
+</html>

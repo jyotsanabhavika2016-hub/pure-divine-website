@@ -1,3 +1,33 @@
 .sites-local/
 *.tar.gz
 *.tar
+node_modules/
+build/
+github-preview/
+artifacts/
+.DS_Store
+
+# Generated website output (source lives in src/).
+/dist/
+
+# Local environment values. Examples must contain placeholders only.
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Private keys and local credential files.
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+credentials.json
+credentials.*.json
+service-account*.json
+.aws/
+.ssh/
+
+# Local logs and packaged exports.
+*.log
+*.zip

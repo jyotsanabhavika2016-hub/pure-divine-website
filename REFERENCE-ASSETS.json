@@ -1,0 +1,57 @@
+{
+  "source": "https://puredivineenergy.com/",
+  "retrieved": "2026-10-13",
+  "stylesheets": [
+    {
+      "url": "https://puredivineenergy.com/wp-content/themes/astra/assets/css/minified/main.min.css?ver=4.13.0",
+      "local": "/assets/cffc4e389f3370dcda66.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Inter:400%2C600|Plus+Jakarta+Sans:600&display=swap&ver=4.13.0",
+      "local": "/assets/ad7cb860415d8a38a8bc.css"
+    },
+    {
+      "url": "https://puredivineenergy.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.5",
+      "local": "/assets/a0858ec844753e209090.css"
+    },
+    {
+      "url": "https://puredivineenergy.com/wp-content/themes/astra/assets/css/minified/compatibility/contact-form-7-main.min.css?ver=4.13.0",
+      "local": "/assets/9bc18b8f2dec0954cce3.css"
+    },
+    {
+      "url": "https://puredivineenergy.com/wp-content/themes/puredivine-astra-child/css/pde-chat-widget.css?ver=1.0.0",
+      "local": "/assets/35b6e3dac81157cbab48.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
+      "local": "/assets/de63b02cdf55d44a63e5.css"
+    },
+    {
+      "url": "https://puredivineenergy.com/wp-content/themes/astra/style.css?ver=4.13.0",
+      "local": "/assets/a50eba2d44198e23803d.css"
+    },
+    {
+      "url": "https://puredivineenergy.com/wp-content/themes/puredivine-astra-child/style.css?ver=7.1.3",
+      "local": "/assets/99bcadde96ea39031f35.css"
+    }
+  ],
+  "fontsAndImages": [
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2",
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2",
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2",
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2",
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2",
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2",
+    "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+    "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_d0n9QB_VIKg.woff2",
+    "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_d0n9Qh_VIKg.woff2",
+    "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_d0n9Qx_VIKg.woff2",
+    "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_d0n9TR_V.woff2",
+    "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpHtKgS4.woff2",
+    "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYrXtKgS4.woff2",
+    "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpntKgS4.woff2",
+    "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYp3tKgS4.woff2",
+    "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2"
+  ],
+  "emoji": "https://s.w.org/images/core/emoji/17.0.2/svg/1f4ab.svg"
+}

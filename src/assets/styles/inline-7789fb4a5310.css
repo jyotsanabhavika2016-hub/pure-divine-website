@@ -1,0 +1,78 @@
+
+        .login-wrap {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .login-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .login-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            color: var(--gold);
+        }
+
+        .login-card h2 {
+            font-family: var(--font-display);
+            font-size: 1.625rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.375rem;
+        }
+
+        .login-card p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.125rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.625rem 0.875rem;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--bg);
+            font-size: 0.9375rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.12);
+        }
+
+        .form-error {
+            font-size: 0.75rem;
+            color: var(--red);
+            margin-top: 0.375rem;
+        }
+    
