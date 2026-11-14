@@ -6600,10 +6600,11 @@ body .pde-footer-bottom-wrap::before{
 
 body .pde-site-footer{
 	background:
-		radial-gradient(circle at 14% 18%, rgba(214,171,89,.14), transparent 18%),
-		radial-gradient(circle at 82% 22%, rgba(209,190,221,.10), transparent 16%),
-		linear-gradient(135deg, #311739 0%, #4a2453 48%, #2b1533 100%) !important;
+		radial-gradient(circle at 14% 18%, rgba(226,184,79,.16), transparent 18%),
+		radial-gradient(circle at 82% 22%, rgba(77,138,209,.14), transparent 16%),
+		linear-gradient(135deg, #071f45 0%, #0b2f63 48%, #061a3a 100%) !important;
 	color:#f7efe7 !important;
+	border-top:3px solid #c68a19 !important;
 	position:relative;
 	overflow:hidden;
 }

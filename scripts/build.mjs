@@ -12,6 +12,8 @@ function prefixPaths(text){if(base==='/')return text;return text.replace(/((?:hr
 await fs.mkdir(output,{recursive:true});
 // Always copy from authoritative src; builds never edit the source.
 await fs.cp(path.join(source,'assets'),path.join(output,'assets'),{recursive:true});
+// GitHub Pages reads this file to keep the configured custom domain on every deploy.
+try{await fs.copyFile(path.join(source,'CNAME'),path.join(output,'CNAME'))}catch(error){if(error.code!=='ENOENT')throw error}
 const files=await walk(path.join(source,'pages'));
 for(const file of files){if(!file.endsWith('.html'))continue;
   let html=await fs.readFile(file,'utf8');

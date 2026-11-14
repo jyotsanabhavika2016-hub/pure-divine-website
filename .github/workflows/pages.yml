@@ -1,7 +1,10 @@
 name: Deploy frontend to GitHub Pages
 
 on:
-  # Manual-only: uploading code must not deploy or host the website.
+  # Every approved update to the live branch publishes automatically.
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:

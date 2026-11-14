@@ -34,3 +34,86 @@ document.addEventListener('submit',event=>{
 });
 // Preserve the original checkout label without integrating a payment provider.
 for(const button of document.querySelectorAll('form[action*="/checkout/"] button[type="submit"]'))button.textContent='Continue to Payment';
+
+// Create a seamless, automatic testimonial carousel from the supplied stories.
+for(const track of document.querySelectorAll('.pde-testimonial-track')){
+  const cards=[...track.children];
+  if(cards.length<2)continue;
+  for(const card of cards){
+    const copy=card.cloneNode(true);
+    copy.setAttribute('aria-hidden','true');
+    track.append(copy);
+  }
+}
+
+// Keep the supplied videos intentionally simple: one accessible Play/Pause control only.
+for(const player of document.querySelectorAll('.pde-video-player')){
+  const video=player.querySelector('video');
+  const button=player.querySelector('.pde-video-toggle');
+  if(!video||!button)continue;
+  const sync=()=>{
+    const playing=!video.paused&&!video.ended;
+    player.classList.toggle('is-playing',playing);
+    button.setAttribute('aria-pressed',String(playing));
+    button.setAttribute('aria-label',`${playing?'Pause':'Play'} ${video.getAttribute('aria-label')||'video'}`);
+  };
+  button.addEventListener('click',()=>{if(video.paused||video.ended)video.play();else video.pause()});
+  video.addEventListener('play',sync);
+  video.addEventListener('pause',sync);
+  video.addEventListener('ended',sync);
+  sync();
+}
+
+const previewLinks=[...document.querySelectorAll('.pde-image-preview')];
+if(previewLinks.length){
+  const modal=document.createElement('dialog');
+  modal.className='pde-image-modal';
+  modal.innerHTML='<button type="button" class="pde-image-modal-close" aria-label="Close image preview">×</button><figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.append(modal);
+  const modalImage=modal.querySelector('img');
+  const modalCaption=modal.querySelector('figcaption');
+  const close=()=>modal.close();
+  modal.querySelector('.pde-image-modal-close').addEventListener('click',close);
+  modal.addEventListener('click',event=>{if(event.target===modal)close()});
+  for(const link of previewLinks)link.addEventListener('click',event=>{
+    event.preventDefault();
+    const image=link.querySelector('img');
+    modalImage.src=link.dataset.preview||link.href;
+    modalImage.alt=image?.alt||'';
+    modalCaption.textContent=link.dataset.caption||'';
+    modal.showModal();
+  });
+}
+
+// Reveal the verified hero highlights with a single calm count-up when they enter view.
+const heroCounts=[...document.querySelectorAll('[data-pde-count]')];
+if(heroCounts.length){
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const showFinal=count=>{
+    const total=Number(count.dataset.pdeCount)||0;
+    count.textContent=`${total.toLocaleString('en-IN')}${count.dataset.pdeSuffix||''}`;
+  };
+  const animateCount=count=>{
+    if(count.dataset.pdeCounted==='true')return;
+    count.dataset.pdeCounted='true';
+    const total=Number(count.dataset.pdeCount)||0;
+    if(reduceMotion||total===0){showFinal(count);return}
+    const duration=total>100?1450:950;
+    const start=performance.now();
+    const tick=now=>{
+      const progress=Math.min((now-start)/duration,1);
+      const eased=1-Math.pow(1-progress,3);
+      count.textContent=`${Math.round(total*eased).toLocaleString('en-IN')}${count.dataset.pdeSuffix||''}`;
+      if(progress<1)requestAnimationFrame(tick);else showFinal(count);
+    };
+    requestAnimationFrame(tick);
+  };
+  if('IntersectionObserver' in window&&!reduceMotion){
+    const observer=new IntersectionObserver(entries=>{
+      for(const entry of entries){
+        if(entry.isIntersecting){animateCount(entry.target);observer.unobserve(entry.target)}
+      }
+    },{threshold:.65});
+    heroCounts.forEach(count=>observer.observe(count));
+  }else heroCounts.forEach(showFinal);
+}
