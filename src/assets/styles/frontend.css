@@ -271,7 +271,7 @@ h1,h2,h3,h4,h5,h6,.pde-recognition-card span,.pde-speaking-copy h2,.pde-home-quo
 .pde-home-main>.pde-hero-refresh .pde-eyebrow::before{display:block;width:54px;height:1px;background:#c78c1a;content:""}
 .pde-home-main>.pde-hero-refresh .pde-home-hero-title{max-width:650px;margin:18px 0 16px!important;color:#12386e!important;font-size:clamp(49px,5.6vw,86px)!important;line-height:.98!important;letter-spacing:-.046em!important}
 .pde-home-main>.pde-hero-refresh .pde-home-hero-title em{font-style:italic;color:#12386e!important}
-.pde-home-main>.pde-hero-refresh .pde-home-hero-title span{color:#b7790e!important}
+.pde-home-main>.pde-hero-refresh .pde-home-hero-title span{display:inline-block;color:#b7790e!important;white-space:nowrap}
 .pde-home-main>.pde-hero-refresh .pde-hero-divider{display:flex!important;width:min(300px,100%);margin:0 0 20px!important}
 .pde-home-main>.pde-hero-refresh .pde-home-hero-text{max-width:570px;margin:0!important;color:#28456f!important;font-size:clamp(16px,1.35vw,19px)!important;line-height:1.58!important}
 .pde-home-main>.pde-hero-refresh .pde-hero-practices{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:1px 0 0;color:#184276;font-family:var(--pde-body,Arial,sans-serif);font-size:11px;font-weight:800;letter-spacing:.12em;line-height:1.3;text-transform:uppercase}
