@@ -256,6 +256,52 @@
     .pde-chat-header-subtitle {
         font-size: 11px;
     }
+
+    .pde-chat-messages {
+        padding: 14px;
+    }
+
+    .pde-chat-quick-actions {
+        padding: 0 14px 12px;
+    }
+
+    .pde-chat-input-wrap {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 390px) {
+    #pde-chat-widget {
+        right: 8px;
+        bottom: 8px;
+        width: calc(100vw - 16px);
+        height: calc(100dvh - 16px);
+        border-radius: 16px;
+    }
+
+    #pde-chat-launcher {
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        min-height: 46px;
+        padding: 12px 14px;
+    }
+
+    .pde-chat-header {
+        padding: 13px 14px 12px;
+    }
+
+    .pde-chat-logo {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+
+    .pde-chat-header-title { font-size: 14px; }
+    .pde-chat-header-subtitle { font-size: 10px; }
+    .pde-message { max-width: 90%; font-size: 13px; }
+    .pde-quick-action { padding: 8px 10px; }
+    #pde-chat-input { min-height: 44px; font-size: 16px; }
+    #pde-chat-send { min-height: 44px; padding: 0 13px; }
 }
 
 .pde-chat-lead-form {

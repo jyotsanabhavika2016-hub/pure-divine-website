@@ -68,5 +68,6 @@ if(launcher&&widget&&messages&&input){
     event.preventDefault();if(!leadForm.reportValidity())return;
     appendMessage('Frontend preview only. Your callback request has not been sent or saved.');
   });
-  if(window.matchMedia('(min-width:769px)').matches)setTimeout(()=>openWidget(false),1200);
+  // Keep the assistant available without covering page content on desktop or mobile.
+  // Visitors can open it intentionally from the persistent Talk to Us button.
 }

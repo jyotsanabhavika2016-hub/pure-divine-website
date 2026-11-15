@@ -3,18 +3,19 @@ const toggle=document.querySelector('.pde-mobile-toggle');
 const panel=document.getElementById('pde-mobile-menu');
 function closeMenu(returnFocus=false){
   if(!toggle||!panel)return;
-  toggle.setAttribute('aria-expanded','false');panel.hidden=true;
+  toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu');panel.hidden=true;
   document.body.classList.remove('pde-mobile-menu-open');
   if(returnFocus)toggle.focus();
 }
 toggle?.addEventListener('click',()=>{
   const open=toggle.getAttribute('aria-expanded')==='true';
-  toggle.setAttribute('aria-expanded',String(!open));panel.hidden=open;
+  toggle.setAttribute('aria-expanded',String(!open));toggle.setAttribute('aria-label',open?'Open menu':'Close menu');panel.hidden=open;
   document.body.classList.toggle('pde-mobile-menu-open',!open);
 });
 document.addEventListener('click',event=>{if(panel&&!panel.hidden&&!panel.contains(event.target)&&!toggle.contains(event.target))closeMenu()});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&panel&&!panel.hidden)closeMenu(true)});
 window.matchMedia('(min-width: 1025px)').addEventListener('change',event=>{if(event.matches)closeMenu()});
+panel?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>closeMenu()));
 for(const form of document.forms){
   for(const [index,input] of [...form.querySelectorAll('input:not([type="hidden"]),textarea,select')].entries()){
     if(input.getAttribute('aria-required')==='true')input.required=true;
