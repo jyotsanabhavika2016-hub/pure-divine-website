@@ -1,5 +1,11 @@
 /* Small accessibility safeguards; retain reference geometry and branding. */
 :root{--frontend-focus:#b68a2b}
+/* Smooth anchor navigation without scroll-jacking touch or mouse-wheel movement. */
+html{scroll-padding-top:108px;scrollbar-gutter:stable}
+body{overscroll-behavior-y:contain}
+main section[id],footer[id]{scroll-margin-top:108px}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media(max-width:760px){html{scroll-padding-top:82px}main section[id],footer[id]{scroll-margin-top:82px}}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--frontend-focus);outline-offset:4px}
 .pde-menu .menu-link[aria-current="page"],.pde-mobile-menu-list .menu-link[aria-current="page"]{color:#b6924a}
 .pde-chat-launcher{cursor:pointer}
