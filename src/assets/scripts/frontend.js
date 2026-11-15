@@ -16,6 +16,38 @@ document.addEventListener('click',event=>{if(panel&&!panel.hidden&&!panel.contai
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&panel&&!panel.hidden)closeMenu(true)});
 window.matchMedia('(min-width: 1025px)').addEventListener('change',event=>{if(event.matches)closeMenu()});
 panel?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>closeMenu()));
+
+// Smooth mouse-wheel movement on desktop. Touch devices keep their native scrolling,
+// and internal scrolling areas (chat, dialogs, form fields) remain untouched.
+const canUseSmoothWheel=window.matchMedia('(pointer: fine)').matches&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(canUseSmoothWheel){
+  let targetScrollY=window.scrollY;
+  let smoothWheelFrame=0;
+  const usesOwnScroll=target=>{
+    if(!(target instanceof Element))return false;
+    if(document.querySelector('dialog[open]'))return true;
+    const container=target.closest('textarea,select,input,[contenteditable="true"],.pde-chat-messages,.pde-mobile-panel,[data-pde-native-scroll]');
+    if(!container)return false;
+    const style=getComputedStyle(container);
+    return /(auto|scroll)/.test(style.overflowY)&&container.scrollHeight>container.clientHeight;
+  };
+  const continueSmoothWheel=()=>{
+    const distance=targetScrollY-window.scrollY;
+    if(Math.abs(distance)<0.75){window.scrollTo(0,targetScrollY);smoothWheelFrame=0;return}
+    window.scrollTo(0,window.scrollY+distance*.18);
+    smoothWheelFrame=requestAnimationFrame(continueSmoothWheel);
+  };
+  window.addEventListener('wheel',event=>{
+    if(event.defaultPrevented||event.ctrlKey||event.metaKey||event.altKey||!event.deltaY||usesOwnScroll(event.target))return;
+    event.preventDefault();
+    const unit=event.deltaMode===1?38:1;
+    const maxScroll=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+    targetScrollY=Math.max(0,Math.min(maxScroll,targetScrollY+event.deltaY*unit));
+    if(!smoothWheelFrame)smoothWheelFrame=requestAnimationFrame(continueSmoothWheel);
+  },{passive:false});
+  window.addEventListener('scroll',()=>{if(!smoothWheelFrame)targetScrollY=window.scrollY},{passive:true});
+}
+
 for(const form of document.forms){
   for(const [index,input] of [...form.querySelectorAll('input:not([type="hidden"]),textarea,select')].entries()){
     if(input.getAttribute('aria-required')==='true')input.required=true;

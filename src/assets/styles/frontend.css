@@ -2,7 +2,6 @@
 :root{--frontend-focus:#b68a2b}
 /* Smooth anchor navigation without scroll-jacking touch or mouse-wheel movement. */
 html{scroll-padding-top:108px;scrollbar-gutter:stable}
-body{overscroll-behavior-y:contain}
 main section[id],footer[id]{scroll-margin-top:108px}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media(max-width:760px){html{scroll-padding-top:82px}main section[id],footer[id]{scroll-margin-top:82px}}
