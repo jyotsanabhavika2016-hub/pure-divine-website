@@ -1191,3 +1191,20 @@ body .pde-courses-page .pde-course-card:nth-child(n+4) p,body .pde-courses-page 
 body .pde-courses-page .pde-course-card:nth-child(n+4) .pde-courses-btn{background:linear-gradient(180deg,#efd176,#d79f2d)!important;border-color:#efd176!important;color:#082653!important}
 body .pde-courses-page .pde-course-card:nth-child(n+4){margin-top:6px!important}
 @media(max-width:1080px){body .pde-courses-page .pde-courses-grid{row-gap:22px!important}body .pde-courses-page .pde-course-card:nth-child(n+4){margin-top:0!important}}
+
+/* Refine course support: replace the oversized navy half-panel with a calm, framed guidance card. */
+body .pde-courses-page .pde-courses-featured{padding:34px 0 30px!important}
+body .pde-courses-page .pde-courses-featured-box{grid-template-columns:minmax(0,1.12fr) minmax(350px,.88fr)!important;gap:38px!important;padding:48px 50px!important;border-radius:34px!important;background:linear-gradient(135deg,#fffdf8 0%,#f8ead1 100%)!important}
+body .pde-courses-page .pde-courses-featured-content{padding:6px 0!important;background:transparent!important}
+body .pde-courses-page .pde-courses-featured-content::after{right:-120px!important;bottom:-148px!important;width:260px!important;height:260px!important}
+body .pde-courses-page .pde-courses-featured-content h2{max-width:15ch!important;margin-top:3px!important;font-size:clamp(39px,3vw,48px)!important}
+body .pde-courses-page .pde-courses-feature-list{margin-top:28px!important}
+body .pde-courses-page .pde-courses-feature-list div{min-height:70px!important;background:rgba(255,255,255,.68)!important}
+body .pde-courses-page .pde-courses-featured-panel{display:block!important;overflow:visible!important;background:transparent!important}
+body .pde-courses-page .pde-courses-featured-panel::before,body .pde-courses-page .pde-courses-featured-panel::after{display:none!important}
+body .pde-courses-page .pde-courses-price-card{min-height:398px!important;padding:43px 42px!important;border:1px solid rgba(240,200,104,.58)!important;border-radius:27px!important;background:linear-gradient(145deg,#092859 0%,#174987 100%)!important;box-shadow:0 18px 34px rgba(7,31,69,.20)!important}
+body .pde-courses-page .pde-courses-price-card h3{max-width:14ch!important;margin-top:3px!important;font-size:clamp(32px,2.5vw,40px)!important}
+body .pde-courses-page .pde-courses-price-card p{max-width:31ch!important;margin-bottom:28px!important}
+body .pde-courses-page .pde-courses-price-card .pde-courses-btn{margin-top:auto!important}
+@media(max-width:1080px){body .pde-courses-page .pde-courses-featured-box{grid-template-columns:1fr!important;gap:28px!important;padding:38px!important}body .pde-courses-page .pde-courses-price-card{min-height:0!important;padding:38px!important}}
+@media(max-width:680px){body .pde-courses-page .pde-courses-featured{padding:22px 0!important}body .pde-courses-page .pde-courses-featured-box{padding:29px 25px!important;border-radius:24px!important}body .pde-courses-page .pde-courses-featured-content{padding:0!important}body .pde-courses-page .pde-courses-featured-content h2{font-size:38px!important}body .pde-courses-page .pde-courses-price-card{padding:30px 26px!important;border-radius:21px!important}}
