@@ -1154,3 +1154,10 @@ body .pde-courses-page .pde-journey-step:nth-child(2) h3,body .pde-courses-page 
 body .pde-courses-page .pde-journey-step:nth-child(2) span{border-color:rgba(240,200,100,.58)!important;background:#f0c864!important;color:#0b326a!important}
 @media(max-width:1080px){body .pde-courses-page .pde-journey-step:nth-child(2){border-right:1px solid #164a8c!important}}
 @media(max-width:680px){body .pde-courses-page .pde-courses-journey{padding:38px 0 22px!important}body .pde-courses-page .pde-courses-journey .pde-courses-section-head h2{font-size:33px!important;letter-spacing:-.035em!important}body .pde-courses-page .pde-journey-step,body .pde-courses-page .pde-journey-step:nth-child(2){min-height:0!important;padding:23px!important;border:1px solid rgba(198,138,25,.25)!important;border-radius:18px!important}body .pde-courses-page .pde-journey-step:nth-child(2){border-color:#164a8c!important}}
+
+/* Keep the guidance panel visually continuous and align both columns from the top. */
+body .pde-courses-page .pde-courses-featured-content h2{max-width:17ch!important;font-size:clamp(39px,3.05vw,49px)!important}
+body .pde-courses-page .pde-courses-price-card{width:100%!important;box-sizing:border-box!important;justify-content:flex-start!important;flex:1 1 auto!important;padding:84px 52px 48px!important}
+body .pde-courses-page .pde-courses-price-card h3{max-width:16ch!important;font-size:clamp(33px,2.65vw,41px)!important}
+@media(max-width:1080px){body .pde-courses-page .pde-courses-price-card{padding:42px!important}}
+@media(max-width:680px){body .pde-courses-page .pde-courses-featured-content h2{max-width:15ch!important;font-size:39px!important}body .pde-courses-page .pde-courses-price-card{padding:33px 27px!important}}
