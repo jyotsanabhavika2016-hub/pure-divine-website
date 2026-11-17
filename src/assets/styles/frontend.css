@@ -963,3 +963,84 @@ html body .ast-site-footer-wrap::before{
 .blog #post-208 .post-thumb-img-content img{transform:scale(2.02)!important;transform-origin:17% 16%!important}
 .blog #post-208 .ast-article-inner:hover .post-thumb-img-content img{transform:scale(2.12)!important}
 @media(max-width:640px){.blog #primary .post-content>:not(.ast-blog-featured-section){margin-right:20px!important;margin-left:20px!important}.blog #primary .post-content>.entry-content{margin-bottom:20px!important}}
+
+/* Courses page: a cohesive navy-and-gold course experience with clear hierarchy. */
+body .pde-courses-page{padding:0 0 88px!important;overflow:hidden;background:linear-gradient(180deg,#fffdf9 0%,#f8efe2 100%)!important;color:#183965}
+body .pde-courses-page .pde-courses-wrap{width:min(calc(100% - 48px),1240px)!important}
+body .pde-courses-page .pde-courses-hero{position:relative;padding:68px 0 52px!important;background:radial-gradient(circle at 88% 18%,rgba(229,185,87,.25),transparent 18%),radial-gradient(circle at 4% 8%,rgba(237,215,164,.23),transparent 26%)}
+body .pde-courses-page .pde-courses-hero::after{position:absolute;right:-140px;bottom:-180px;width:460px;height:460px;border:1px solid rgba(198,138,25,.22);border-radius:50%;box-shadow:0 0 0 24px rgba(255,248,234,.58),0 0 0 50px rgba(198,138,25,.06);content:"";pointer-events:none}
+body .pde-courses-page .pde-courses-hero-grid{position:relative;z-index:1;grid-template-columns:minmax(0,1.14fr) minmax(340px,.86fr)!important;gap:clamp(34px,7vw,104px)!important;align-items:center!important}
+body .pde-courses-page .pde-courses-copy{padding:0!important}
+body .pde-courses-page .pde-courses-eyebrow{color:#b77812!important;font-size:12px!important;font-weight:800!important;letter-spacing:.16em!important}
+body .pde-courses-page .pde-courses-copy h1{max-width:760px!important;margin:0 0 20px!important;color:#102f61!important;font-size:clamp(48px,5.8vw,80px)!important;line-height:.97!important;letter-spacing:-.045em!important}
+body .pde-courses-page .pde-courses-copy>p{max-width:600px!important;color:#53647a!important;font-size:17px!important;line-height:1.7!important}
+body .pde-courses-page .pde-courses-hero-actions{margin-top:30px!important;gap:12px!important}
+body .pde-courses-page .pde-courses-btn{min-height:52px!important;padding:13px 23px!important;border-radius:999px!important;font-weight:800!important;line-height:1!important;transition:transform .22s ease,box-shadow .22s ease,background .22s ease!important}
+body .pde-courses-page .pde-courses-btn-primary{background:#10396f!important;border:1px solid #10396f!important;color:#fff!important;box-shadow:0 12px 24px rgba(16,57,111,.2)!important}
+body .pde-courses-page .pde-courses-btn-secondary{background:rgba(255,252,246,.72)!important;border:1px solid #cb9127!important;color:#9d6509!important}
+body .pde-courses-page .pde-courses-btn:hover,body .pde-courses-page .pde-courses-btn:focus-visible{transform:translateY(-3px)!important;box-shadow:0 16px 30px rgba(16,57,111,.22)!important;outline:0}
+body .pde-courses-page .pde-courses-mini-stats{max-width:620px!important;gap:10px!important;margin-top:38px!important;padding-top:18px;border-top:1px solid rgba(198,138,25,.37)}
+body .pde-courses-page .pde-courses-mini-stat{position:relative;min-height:120px;padding:18px 16px!important;border:1px solid rgba(198,138,25,.24)!important;border-radius:16px!important;background:rgba(255,253,248,.78)!important;box-shadow:none!important}
+body .pde-courses-page .pde-courses-mini-stat small{display:block;margin-bottom:7px;color:#bf841b;font-size:11px;font-weight:800;letter-spacing:.12em}
+body .pde-courses-page .pde-courses-mini-stat strong{color:#123b76!important;font-size:15px!important}
+body .pde-courses-page .pde-courses-mini-stat span{color:#697587!important;line-height:1.45!important}
+body .pde-courses-page .pde-courses-hero-card{display:block!important}
+body .pde-courses-page .pde-courses-hero-card-inner{min-height:520px;padding:40px!important;border:1px solid rgba(226,184,79,.56)!important;border-radius:30px!important;background:linear-gradient(145deg,#061e45 0%,#123f7b 58%,#0a2a5e 100%)!important;box-shadow:0 26px 58px rgba(7,31,69,.22)!important}
+body .pde-courses-page .pde-courses-hero-card-inner::before{position:absolute;top:44px;right:38px;width:70px;height:70px;border:1px solid rgba(244,207,123,.62);border-radius:50%;box-shadow:0 0 0 12px rgba(244,207,123,.09),0 0 0 25px rgba(244,207,123,.05);content:""}
+body .pde-courses-page .pde-courses-tag{border-color:rgba(244,207,123,.35)!important;background:rgba(244,207,123,.13)!important;color:#f5d587!important}
+body .pde-courses-page .pde-courses-hero-card-inner h2{max-width:8ch;margin-top:4px!important;color:#fffaf0!important;font-size:clamp(35px,3vw,47px)!important}
+body .pde-courses-page .pde-courses-hero-card-inner p{color:rgba(255,250,240,.82)!important;line-height:1.72!important}
+body .pde-courses-page .pde-courses-hero-card-inner ul{margin:22px 0 10px!important;padding:0!important;list-style:none}
+body .pde-courses-page .pde-courses-hero-card-inner li{position:relative;padding-left:21px;color:rgba(255,250,240,.9)!important}
+body .pde-courses-page .pde-courses-hero-card-inner li::before{position:absolute;top:.65em;left:0;width:7px;height:7px;border-radius:50%;background:#e2b84f;box-shadow:0 0 0 4px rgba(226,184,79,.13);content:""}
+body .pde-courses-page .pde-courses-path-markers{display:flex;align-items:center;gap:8px;margin:27px 0 16px;color:#f2cf7c;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+body .pde-courses-page .pde-courses-path-markers i{display:block;flex:1;height:1px;background:linear-gradient(90deg,#d1992e,rgba(226,184,79,.15))}
+body .pde-courses-page .pde-courses-text-link{color:#f4d48c!important;font-size:14px!important;letter-spacing:.02em}
+body .pde-courses-page .pde-courses-text-link span{margin-left:7px;font-size:18px;vertical-align:-1px}
+body .pde-courses-page .pde-courses-featured{padding:24px 0 36px!important}
+body .pde-courses-page .pde-courses-featured-box{gap:clamp(24px,5vw,70px)!important;padding:48px!important;border:1px solid rgba(198,138,25,.28)!important;border-radius:30px!important;background:rgba(255,253,249,.78)!important;box-shadow:0 20px 46px rgba(24,57,101,.08)!important}
+body .pde-courses-page .pde-courses-featured-content h2,body .pde-courses-page .pde-courses-section-head h2{max-width:15ch;color:#102f61!important;font-size:clamp(39px,4vw,58px)!important;line-height:1.02!important}
+body .pde-courses-page .pde-courses-featured-content p,body .pde-courses-page .pde-courses-section-head p{color:#59677a!important;font-size:16px!important;line-height:1.7!important}
+body .pde-courses-page .pde-courses-feature-list{gap:10px!important}
+body .pde-courses-page .pde-courses-feature-list div{padding:15px 16px!important;border-color:rgba(198,138,25,.25)!important;border-radius:14px!important;background:#fffaf1!important;color:#43546a!important}
+body .pde-courses-page .pde-courses-price-card{min-height:100%;padding:35px!important;border:1px solid rgba(226,184,79,.5)!important;border-radius:24px!important;background:linear-gradient(145deg,#fff4d9,#f4dfb0)!important}
+body .pde-courses-page .pde-courses-price-card h3{color:#102f61!important;font-size:clamp(32px,3vw,43px)!important}
+body .pde-courses-page .pde-courses-price-card p{color:#556378!important}
+body .pde-courses-page .pde-courses-listing{padding:58px 0 24px!important}
+body .pde-courses-page .pde-courses-section-head{max-width:720px!important;margin:0 auto 34px!important;text-align:center}
+body .pde-courses-page .pde-courses-section-head h2{max-width:none!important;margin-right:auto!important;margin-left:auto!important}
+body .pde-courses-page .pde-courses-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important}
+body .pde-courses-page .pde-course-card{display:flex!important;min-height:510px;padding:28px!important;border:1px solid rgba(226,184,79,.34)!important;border-radius:24px!important;background:linear-gradient(145deg,#071f45 0%,#103b75 58%,#092b5e 100%)!important;box-shadow:0 18px 36px rgba(7,31,69,.16)!important;flex-direction:column}
+body .pde-courses-page .pde-course-card.is-featured{background:linear-gradient(145deg,#0a2858 0%,#174a8a 56%,#0b326d 100%)!important;box-shadow:0 22px 40px rgba(7,31,69,.22)!important}
+body .pde-courses-page .pde-course-card:hover{transform:translateY(-6px)!important;box-shadow:0 26px 48px rgba(7,31,69,.26)!important}
+body .pde-courses-page .pde-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+body .pde-courses-page .pde-course-level{margin:0!important;background:#fff3d7!important;color:#a46803!important}
+body .pde-courses-page .pde-course-price{text-align:right!important}
+body .pde-courses-page .pde-course-price strong{display:block!important;color:#f8e1a2!important;font-size:21px!important;line-height:1.05}
+body .pde-courses-page .pde-course-price span{display:block!important;margin-top:4px;color:rgba(255,250,240,.72)!important;font-size:11px!important;line-height:1.25}
+body .pde-courses-page .pde-course-card h3{margin:30px 0 12px!important;color:#fffaf0!important;font-size:clamp(29px,2.4vw,37px)!important;line-height:1.05!important}
+body .pde-courses-page .pde-course-card p{color:rgba(255,250,240,.85)!important;line-height:1.72!important}
+body .pde-courses-page .pde-course-card ul{margin:4px 0 24px!important;padding-left:18px!important}
+body .pde-courses-page .pde-course-card li{color:rgba(255,250,240,.9)!important;font-size:13px!important;line-height:1.55!important}
+body .pde-courses-page .pde-course-card li::marker{color:#efc764!important}
+body .pde-courses-page .pde-card-actions{margin-top:auto}
+body .pde-courses-page .pde-card-actions .pde-courses-btn{width:100%;min-height:48px!important;background:linear-gradient(180deg,#efd176,#d79f2d)!important;border-color:#efd176!important;color:#082653!important;box-shadow:none!important}
+body .pde-courses-page .pde-courses-journey{padding:64px 0 24px!important}
+body .pde-courses-page .pde-courses-journey .pde-courses-section-head{margin-bottom:30px!important}
+body .pde-courses-page .pde-courses-journey-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;border:1px solid rgba(198,138,25,.28);border-radius:22px;background:#fffaf2;overflow:hidden}
+body .pde-courses-page .pde-journey-step{position:relative;min-height:238px;padding:28px 23px!important;border:0!important;border-radius:0!important;border-right:1px solid rgba(198,138,25,.22)!important;background:transparent!important;box-shadow:none!important}
+body .pde-courses-page .pde-journey-step:last-child{border-right:0!important}
+body .pde-courses-page .pde-journey-step span{width:auto!important;height:auto!important;margin:0 0 25px!important;padding:0!important;border-radius:0!important;background:transparent!important;color:#c38315!important;font-family:var(--pde-display,serif)!important;font-size:37px!important;line-height:1!important}
+body .pde-courses-page .pde-journey-step h3{color:#102f61!important;font-family:var(--pde-display,serif)!important;font-size:26px!important}
+body .pde-courses-page .pde-journey-step p{color:#5d6a7b!important;line-height:1.65!important}
+body .pde-courses-page .pde-courses-cta{padding-top:54px!important}
+body .pde-courses-page .pde-courses-cta-box{padding:44px 50px!important;border:1px solid rgba(226,184,79,.45)!important;border-radius:28px!important;background:linear-gradient(135deg,#071f45,#123d78 54%,#09295a)!important}
+body .pde-courses-page .pde-courses-cta-box h2{max-width:14ch;color:#fffaf0!important;font-size:clamp(38px,4vw,56px)!important}
+body .pde-courses-page .pde-courses-cta-box p{color:rgba(255,250,240,.8)!important;line-height:1.7!important}
+body .pde-courses-page .pde-courses-cta-actions{justify-content:flex-end!important}
+body .pde-courses-page .pde-courses-cta-actions .pde-courses-btn-primary{background:#e2b84f!important;border-color:#e2b84f!important;color:#092957!important}
+body .pde-courses-page .pde-courses-cta-actions .pde-courses-btn-secondary{border-color:rgba(255,255,255,.5)!important;background:rgba(255,255,255,.08)!important;color:#fff!important}
+@media(max-width:1080px){body .pde-courses-page .pde-courses-hero-grid,body .pde-courses-page .pde-courses-featured-box,body .pde-courses-page .pde-courses-cta-box{grid-template-columns:1fr!important}body .pde-courses-page .pde-courses-hero-card{max-width:640px}body .pde-courses-page .pde-courses-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}body .pde-courses-page .pde-courses-journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}body .pde-courses-page .pde-journey-step:nth-child(2){border-right:0!important}body .pde-courses-page .pde-journey-step:nth-child(-n+2){border-bottom:1px solid rgba(198,138,25,.22)!important}body .pde-courses-page .pde-courses-cta-actions{justify-content:flex-start!important}}
+@media(min-width:961px) and (max-width:1100px){body .pde-courses-page .pde-courses-hero-grid{grid-template-columns:minmax(0,1.06fr) minmax(300px,.94fr)!important;gap:34px!important}body .pde-courses-page .pde-courses-featured-box,body .pde-courses-page .pde-courses-cta-box{grid-template-columns:minmax(0,1.06fr) minmax(290px,.94fr)!important}body .pde-courses-page .pde-courses-hero-card{max-width:none}body .pde-courses-page .pde-courses-hero-card-inner{min-height:570px;padding:30px!important}body .pde-courses-page .pde-courses-mini-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important}body .pde-courses-page .pde-courses-mini-stat{padding:14px 12px!important}}
+@media(max-width:680px){body .pde-courses-page{padding-bottom:58px!important}body .pde-courses-page .pde-courses-wrap{width:min(calc(100% - 28px),1240px)!important}body .pde-courses-page .pde-courses-hero{padding:46px 0 36px!important}body .pde-courses-page .pde-courses-hero::after{display:none}body .pde-courses-page .pde-courses-copy h1{font-size:clamp(42px,12vw,58px)!important}body .pde-courses-page .pde-courses-copy>p{font-size:16px!important}body .pde-courses-page .pde-courses-hero-actions{align-items:stretch;flex-direction:column}body .pde-courses-page .pde-courses-btn{width:100%}body .pde-courses-page .pde-courses-mini-stats{grid-template-columns:1fr!important;margin-top:28px!important}body .pde-courses-page .pde-courses-mini-stat{min-height:0}body .pde-courses-page .pde-courses-hero-card-inner{min-height:0;padding:29px!important;border-radius:24px!important}body .pde-courses-page .pde-courses-hero-card-inner h2{font-size:36px!important}body .pde-courses-page .pde-courses-featured{padding-top:14px!important}body .pde-courses-page .pde-courses-featured-box{padding:28px!important;border-radius:23px!important}body .pde-courses-page .pde-courses-feature-list{grid-template-columns:1fr!important}body .pde-courses-page .pde-courses-price-card{padding:27px!important}body .pde-courses-page .pde-courses-listing{padding-top:48px!important}body .pde-courses-page .pde-courses-section-head{text-align:left!important}body .pde-courses-page .pde-courses-section-head h2{margin-left:0!important;font-size:39px!important}body .pde-courses-page .pde-courses-grid,body .pde-courses-page .pde-courses-journey-grid{grid-template-columns:1fr!important}body .pde-courses-page .pde-course-card{min-height:0;padding:25px!important}body .pde-courses-page .pde-course-card:hover{transform:none!important}body .pde-courses-page .pde-journey-step,body .pde-courses-page .pde-journey-step:nth-child(2){min-height:0;border-right:0!important;border-bottom:1px solid rgba(198,138,25,.22)!important}body .pde-courses-page .pde-journey-step:last-child{border-bottom:0!important}body .pde-courses-page .pde-courses-cta{padding-top:42px!important}body .pde-courses-page .pde-courses-cta-box{padding:31px 27px!important;border-radius:24px!important}body .pde-courses-page .pde-courses-cta-box h2{font-size:38px!important}}
+@media(prefers-reduced-motion:reduce){body .pde-courses-page *{scroll-behavior:auto!important;transition:none!important}}
