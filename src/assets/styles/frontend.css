@@ -1086,3 +1086,18 @@ body .pde-site-footer .pde-social-links a{min-height:36px!important;padding:0 12
 body .pde-site-footer .pde-footer-bottom{padding:14px 0!important;margin-top:0!important}
 @media(max-width:960px){body .pde-site-footer .pde-footer-grid{grid-template-columns:1.3fr 1fr 1fr!important;gap:24px!important}body .pde-site-footer .pde-footer-brand{grid-column:1/-1!important;max-width:620px!important}}
 @media(max-width:640px){body .pde-site-footer .pde-footer-top{padding:36px 0 18px!important}body .pde-site-footer .pde-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px 18px!important}body .pde-site-footer .pde-footer-brand{grid-column:1/-1!important}body .pde-site-footer .pde-footer-logo-badge{width:72px!important;height:72px!important}body .pde-site-footer .pde-footer-logo{width:125px!important;transform:translate(-26px,0)!important}body .pde-site-footer .pde-footer-brand-copy strong{font-size:22px!important}body .pde-site-footer .pde-footer-bottom-wrap{grid-template-columns:1fr!important;text-align:left!important}body .pde-site-footer .pde-footer-bottom-wrap::before{justify-self:start!important}body .pde-site-footer .pde-footer-bottom-wrap p:last-child{text-align:left!important}}
+
+/* Refine the learning-support section: same content, better desktop balance. */
+body .pde-courses-page .pde-courses-featured-content h2{max-width:18ch!important;font-size:clamp(38px,3.7vw,54px)!important}
+body .pde-courses-page .pde-courses-featured-panel{align-self:center!important}
+body .pde-courses-page .pde-courses-price-card{height:auto!important;min-height:0!important;padding:34px!important;box-shadow:0 16px 30px rgba(157,104,9,.10)}
+body .pde-courses-page .pde-courses-price-card p{max-width:39ch!important;margin-bottom:22px!important}
+@media(max-width:680px){body .pde-courses-page .pde-courses-featured-content h2{max-width:14ch!important;font-size:39px!important}body .pde-courses-page .pde-courses-price-card{padding:27px!important}}
+
+/* Keep the final course-guidance callout closely connected to the learning journey. */
+body .pde-courses-page .pde-courses-journey{padding-bottom:0!important}
+body .pde-courses-page .pde-courses-cta{padding-top:26px!important}
+body .pde-courses-page .pde-courses-cta-box{gap:34px!important;padding:34px 44px!important}
+body .pde-courses-page .pde-courses-cta-box h2{margin-bottom:9px!important;font-size:clamp(36px,3.55vw,50px)!important}
+body .pde-courses-page .pde-courses-cta-box p{max-width:43ch!important}
+@media(max-width:680px){body .pde-courses-page .pde-courses-cta{padding-top:24px!important}body .pde-courses-page .pde-courses-cta-box{padding:29px 25px!important}}
