@@ -1066,3 +1066,23 @@ body .pde-courses-page .pde-courses-path-list b{display:grid;width:28px;height:2
 body .pde-courses-page .pde-courses-path-list span{color:rgba(255,250,240,.86);font-size:12px;line-height:1.35}
 body .pde-courses-page .pde-courses-path-list strong{margin-right:4px;color:#f4d48c;font-weight:800}
 @media(max-width:680px){body .pde-courses-page .pde-courses-hero::before{background:linear-gradient(90deg,rgba(255,252,246,.91),rgba(255,248,235,.83)),url('/assets/pde/golden-wellness-singing-bowl.png') 68% center/cover no-repeat}body .pde-courses-page .pde-courses-copy h1{font-size:clamp(42px,11.5vw,57px)!important}body .pde-courses-page .pde-courses-hero-card-inner{min-height:0!important;padding:28px!important}}
+
+/* Compact shared footer: retain all information without the oversized empty area. */
+body .pde-site-footer .pde-footer-top{padding:42px 0 22px!important}
+body .pde-site-footer .pde-footer-grid{grid-template-columns:1.32fr .9fr .9fr .9fr!important;gap:26px!important;align-items:start!important}
+body .pde-site-footer .pde-footer-logo-badge{width:82px!important;height:82px!important}
+body .pde-site-footer .pde-footer-logo{width:142px!important;transform:translate(-30px,0)!important}
+body .pde-site-footer .pde-footer-brand{gap:0 11px!important}
+body .pde-site-footer .pde-footer-brand-copy strong{font-size:24px!important}
+body .pde-site-footer .pde-footer-brand-copy span{font-size:10px!important}
+body .pde-site-footer .pde-footer-brand-line{margin:12px 0 0!important;font-size:11px!important}
+body .pde-site-footer .pde-footer-contact{margin-top:14px!important;padding:10px 13px!important;gap:0!important;border-radius:14px!important}
+body .pde-site-footer .pde-footer-contact li,body .pde-site-footer .pde-footer-links li{margin:0!important;padding:0!important}
+body .pde-site-footer .pde-footer-contact a{min-height:0!important;padding:6px 0!important;font-size:14px!important;line-height:1.4!important}
+body .pde-site-footer .pde-footer-col h3{margin:2px 0 12px!important;font-size:20px!important}
+body .pde-site-footer .pde-footer-links a{min-height:0!important;padding:4px 0!important;font-size:14px!important;line-height:1.45!important}
+body .pde-site-footer .pde-social-links{margin-top:12px!important;gap:8px!important}
+body .pde-site-footer .pde-social-links a{min-height:36px!important;padding:0 12px!important;font-size:12px!important}
+body .pde-site-footer .pde-footer-bottom{padding:14px 0!important;margin-top:0!important}
+@media(max-width:960px){body .pde-site-footer .pde-footer-grid{grid-template-columns:1.3fr 1fr 1fr!important;gap:24px!important}body .pde-site-footer .pde-footer-brand{grid-column:1/-1!important;max-width:620px!important}}
+@media(max-width:640px){body .pde-site-footer .pde-footer-top{padding:36px 0 18px!important}body .pde-site-footer .pde-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px 18px!important}body .pde-site-footer .pde-footer-brand{grid-column:1/-1!important}body .pde-site-footer .pde-footer-logo-badge{width:72px!important;height:72px!important}body .pde-site-footer .pde-footer-logo{width:125px!important;transform:translate(-26px,0)!important}body .pde-site-footer .pde-footer-brand-copy strong{font-size:22px!important}body .pde-site-footer .pde-footer-bottom-wrap{grid-template-columns:1fr!important;text-align:left!important}body .pde-site-footer .pde-footer-bottom-wrap::before{justify-self:start!important}body .pde-site-footer .pde-footer-bottom-wrap p:last-child{text-align:left!important}}
