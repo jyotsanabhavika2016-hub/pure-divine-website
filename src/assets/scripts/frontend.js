@@ -48,6 +48,45 @@ for(const track of document.querySelectorAll('.pde-testimonial-track')){
   }
 }
 
+// A small, optional 4-4-4 breathing timer for the daily affirmation.
+for(const timer of document.querySelectorAll('.pde-breath-timer')){
+  const button=timer.querySelector('.pde-breath-timer-toggle');
+  const phase=timer.querySelector('.pde-breath-timer-phase');
+  const value=timer.querySelector('.pde-breath-timer-orb strong');
+  if(!button||!phase||!value)continue;
+  const phases=['Breathe in','Hold gently','Breathe out'];
+  let intervalId=0;
+  let startedAt=0;
+  const reset=()=>{
+    window.clearInterval(intervalId);intervalId=0;startedAt=0;
+    timer.classList.remove('is-running');button.textContent='Start';button.setAttribute('aria-pressed','false');
+    phase.textContent='A moment for you';value.textContent='04';
+  };
+  const tick=()=>{
+    const elapsed=Date.now()-startedAt;
+    const cyclePosition=elapsed%12000;
+    const phaseIndex=Math.floor(cyclePosition/4000);
+    const secondsLeft=4-Math.floor((cyclePosition%4000)/1000);
+    phase.textContent=phases[phaseIndex];value.textContent=String(secondsLeft).padStart(2,'0');
+  };
+  button.addEventListener('click',()=>{
+    if(intervalId){reset();return}
+    startedAt=Date.now();timer.classList.add('is-running');button.textContent='Stop';button.setAttribute('aria-pressed','true');
+    tick();intervalId=window.setInterval(tick,250);
+  });
+}
+
+// Keep FAQ groups easy to scan by showing one expanded answer per topic at a time.
+for(const list of document.querySelectorAll('[data-faq-list]')){
+  const items=[...list.querySelectorAll('details')];
+  for(const item of items){
+    item.addEventListener('toggle',()=>{
+      if(!item.open)return;
+      for(const sibling of items)if(sibling!==item)sibling.open=false;
+    });
+  }
+}
+
 // Keep the supplied videos intentionally simple: one accessible Play/Pause control only.
 for(const player of document.querySelectorAll('.pde-video-player')){
   const video=player.querySelector('video');
