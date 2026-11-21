@@ -196,3 +196,27 @@ if(!reduceScrollMotion){
     targets.forEach(target=>observer.observe(target));
   });
 }
+
+// The course-learning panel gets its own short sequence on refresh and each return to view.
+const faqLearningPanels=[...document.querySelectorAll('.pde-faq-course-layout')];
+if(!reduceScrollMotion&&faqLearningPanels.length){
+  const replayLearningPanel=panel=>{
+    panel.classList.remove('is-learning-visible');
+    void panel.offsetWidth;
+    panel.classList.add('is-learning-visible');
+  };
+  faqLearningPanels.forEach(panel=>panel.classList.add('pde-learning-motion'));
+  window.requestAnimationFrame(()=>{
+    if(!('IntersectionObserver' in window)){
+      faqLearningPanels.forEach(replayLearningPanel);
+      return;
+    }
+    const observer=new IntersectionObserver(entries=>{
+      for(const entry of entries){
+        if(entry.isIntersecting)replayLearningPanel(entry.target);
+        else entry.target.classList.remove('is-learning-visible');
+      }
+    },{rootMargin:'0px 0px -8% 0px',threshold:.1});
+    faqLearningPanels.forEach(panel=>observer.observe(panel));
+  });
+}

@@ -2766,3 +2766,26 @@ body.pde-faq-page .pde-faq-course-route strong{display:inline!important;margin:0
   html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-section-courses.pde-scroll-reveal.is-visible .pde-faq-course-route>div:nth-child(3) b{animation-delay:160ms}
 }
 @keyframes pde-faq-step-pulse{0%{transform:scale(.68);opacity:0}70%{transform:scale(1.08);opacity:1}100%{transform:scale(1)}}
+
+/* Dedicated FAQ path sequence: runs after reload and restarts when the panel returns into view. */
+@media(prefers-reduced-motion:no-preference){
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-section-heading .pde-faq-eyebrow,
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-section-heading h2,
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-section-heading>p,
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-course-route>div,
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-link{opacity:0;transform:translate3d(0,16px,0)}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-section-heading .pde-faq-eyebrow{animation:pde-faq-learning-rise .48s .03s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-section-heading h2{animation:pde-faq-learning-rise .64s .1s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-section-heading>p{animation:pde-faq-learning-rise .55s .2s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div:nth-child(1){animation:pde-faq-learning-step .54s .29s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div:nth-child(2){animation:pde-faq-learning-step .54s .38s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div:nth-child(3){animation:pde-faq-learning-step .54s .47s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-link{animation:pde-faq-learning-rise .5s .57s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div b{animation:pde-faq-learning-orb .52s cubic-bezier(.2,.8,.25,1) both}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div:nth-child(1) b{animation-delay:.38s}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div:nth-child(2) b{animation-delay:.47s}
+  body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div:nth-child(3) b{animation-delay:.56s}
+}
+@keyframes pde-faq-learning-rise{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+@keyframes pde-faq-learning-step{from{opacity:0;transform:translate3d(-12px,10px,0)}to{opacity:1;transform:none}}
+@keyframes pde-faq-learning-orb{from{opacity:0;transform:scale(.55)}70%{opacity:1;transform:scale(1.09)}to{opacity:1;transform:scale(1)}}
