@@ -2689,3 +2689,47 @@ body .pde-page-shell .pde-stack .pde-mini-card:nth-child(3) p{color:#66748a!impo
 body .pde-page-shell .pde-stack .pde-mini-card:hover{transform:translateY(-5px)!important}
 @media(max-width:1100px){body .pde-page-shell .pde-stack{grid-template-columns:1fr!important;gap:14px!important}body .pde-page-shell .pde-stack .pde-mini-card,body .pde-page-shell .pde-stack .pde-mini-card:nth-child(3){min-height:0!important}}
 @media(max-width:640px){body .pde-page-shell .pde-stack .pde-mini-card,body .pde-page-shell .pde-stack .pde-mini-card:nth-child(3){padding:24px 21px!important;border-radius:22px!important}body .pde-page-shell .pde-stack .pde-mini-card h3{font-size:32px!important}}
+
+/* FAQ rebuild: a single calm information hierarchy with readable, full-width answers. */
+body.pde-faq-page{background:#faf5eb!important}
+body.pde-faq-page .pde-faq-main{padding:26px 0 0!important;background:radial-gradient(circle at 0 16%,rgba(198,138,25,.09),transparent 25%),#faf5eb!important}
+body.pde-faq-page .pde-faq-hero{max-width:1240px!important;margin:0 auto!important;padding:clamp(45px,6vw,76px) clamp(24px,5vw,70px)!important;border:1px solid rgba(239,204,119,.38)!important;border-radius:32px!important;background:radial-gradient(circle at 95% 4%,rgba(239,204,119,.18),transparent 25%),linear-gradient(135deg,#071f45,#123d77)!important;box-shadow:0 22px 45px rgba(7,31,69,.16)!important}
+body.pde-faq-page .pde-faq-hero::before{top:auto!important;right:-92px!important;bottom:-125px!important;border-color:rgba(239,204,119,.3)!important;animation:pde-faq-hero-orbit 13s ease-in-out infinite!important}
+body.pde-faq-page .pde-faq-hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr)!important;gap:clamp(35px,7vw,90px)!important}
+body.pde-faq-page .pde-faq-hero .pde-faq-eyebrow{color:#efcc77!important}
+body.pde-faq-page .pde-faq-hero .pde-faq-eyebrow::before{background:#efcc77!important}
+body.pde-faq-page .pde-faq-hero h1{max-width:13ch!important;margin:16px 0!important;color:#fffaf0!important;font-size:clamp(46px,5.4vw,72px)!important;line-height:1.02!important}
+body.pde-faq-page .pde-faq-hero>div>div>p{max-width:54ch!important;color:rgba(255,250,240,.79)!important}
+body.pde-faq-page .pde-faq-topic-list a{border-color:rgba(239,204,119,.42)!important;color:#fffaf0!important;background:rgba(255,255,255,.055)!important}
+body.pde-faq-page .pde-faq-topic-list a:hover{background:rgba(239,204,119,.15)!important}
+body.pde-faq-page .pde-faq-hero-note{gap:13px!important;padding:29px!important;border-color:rgba(198,138,25,.38)!important;border-radius:23px!important;background:linear-gradient(145deg,#fffdf8,#f7e8ca)!important;box-shadow:0 16px 29px rgba(0,0,0,.12)!important}
+body.pde-faq-page .pde-faq-hero-note>span{width:42px!important;height:42px!important;border-color:rgba(198,138,25,.46)!important;background:#fff8e9!important;color:#c68a19!important}
+body.pde-faq-page .pde-faq-hero-note .pde-faq-note-kicker{color:#af730f!important;font-family:Inter,Arial,sans-serif!important;font-size:10px!important;font-style:normal!important;font-weight:800!important;letter-spacing:.14em!important;text-transform:uppercase!important}
+body.pde-faq-page .pde-faq-hero-note strong{color:#103a73!important;font-size:clamp(29px,3vw,39px)!important}
+body.pde-faq-page .pde-faq-hero-note p{color:#62718a!important}
+body.pde-faq-page .pde-faq-hero-note a{color:#103a73!important}
+body.pde-faq-page .pde-faq-section{padding:clamp(55px,7vw,88px) 0!important}
+body.pde-faq-page .pde-faq-section:not(.pde-faq-section-courses)>.pde-shell:first-child{display:grid!important;grid-template-columns:minmax(245px,.62fr) minmax(0,1.38fr)!important;gap:clamp(32px,6vw,85px)!important;align-items:start!important}
+body.pde-faq-page .pde-faq-section-heading{max-width:none!important;margin:0!important}
+body.pde-faq-page .pde-faq-section h2{max-width:14ch!important;margin:14px 0!important;color:#103a73!important;font-size:clamp(37px,4.1vw,57px)!important;line-height:1.04!important}
+body.pde-faq-page .pde-faq-section-heading>p{max-width:36ch!important;font-size:15px!important}
+body.pde-faq-page .pde-faq-side-help{display:grid!important;gap:8px!important;margin-top:28px!important;padding:19px!important;border-left:2px solid #c68a19!important;background:rgba(255,253,248,.62)!important}
+body.pde-faq-page .pde-faq-side-help span{color:#af730f!important;font-family:Inter,Arial,sans-serif!important;font-size:9px!important;font-weight:800!important;letter-spacing:.14em!important;text-transform:uppercase!important}
+body.pde-faq-page .pde-faq-side-help strong{color:#103a73!important;font-family:var(--pde-display,Georgia,serif)!important;font-size:24px!important;font-weight:500!important;line-height:1.08!important}
+body.pde-faq-page .pde-faq-side-help p{font-size:13px!important;line-height:1.6!important}
+body.pde-faq-page .pde-faq-side-help a{color:#103a73!important;font-family:Inter,Arial,sans-serif!important;font-size:12px!important;font-weight:800!important;text-decoration:none!important}
+body.pde-faq-page .pde-faq-list{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+body.pde-faq-page .pde-faq-list details{padding:0 23px!important;border-color:rgba(198,138,25,.26)!important;border-radius:16px!important;background:#fffdfa!important;box-shadow:none!important}
+body.pde-faq-page .pde-faq-list details[open]{border-color:rgba(198,138,25,.56)!important;box-shadow:0 14px 27px rgba(7,31,69,.07)!important}
+body.pde-faq-page .pde-faq-list summary{min-height:67px!important;padding-right:38px!important;font-size:15px!important}
+body.pde-faq-page .pde-faq-list summary::after{right:19px!important;width:27px!important;height:27px!important}
+body.pde-faq-page .pde-faq-list p{max-width:64ch!important;padding-bottom:20px!important;font-size:14px!important}
+body.pde-faq-page .pde-faq-section-courses{background:linear-gradient(135deg,#f0e0c2,#fffaf0)!important}
+body.pde-faq-page .pde-faq-course-layout{grid-template-columns:minmax(290px,.75fr) minmax(0,1.25fr)!important;gap:clamp(35px,7vw,93px)!important}
+body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading{padding:clamp(26px,3.5vw,38px)!important;border:1px solid rgba(198,138,25,.34)!important;border-radius:24px!important;background:linear-gradient(145deg,#fffdf8,#f8e9cb)!important;box-shadow:0 14px 28px rgba(7,31,69,.06)!important}
+body.pde-faq-page .pde-faq-course-route{display:grid!important;gap:8px!important;margin:24px 0 22px!important}
+body.pde-faq-page .pde-faq-course-route div{padding:10px 12px!important;border:1px solid rgba(198,138,25,.24)!important;border-radius:12px!important;background:rgba(255,255,255,.55)!important}
+body.pde-faq-page .pde-faq-booking-panel{margin-top:clamp(38px,5vw,65px)!important;border-radius:29px!important}
+body.pde-faq-page .pde-faq-booking-questions .pde-faq-section-heading{padding-top:5px!important}
+@media(max-width:920px){body.pde-faq-page .pde-faq-hero{margin:0 16px!important}body.pde-faq-page .pde-faq-hero-grid,body.pde-faq-page .pde-faq-section:not(.pde-faq-section-courses)>.pde-shell:first-child,body.pde-faq-page .pde-faq-course-layout{grid-template-columns:1fr!important;gap:28px!important}body.pde-faq-page .pde-faq-section h2{max-width:17ch!important}body.pde-faq-page .pde-faq-side-help{max-width:520px!important}}
+@media(max-width:640px){body.pde-faq-page .pde-faq-main{padding-top:12px!important}body.pde-faq-page .pde-faq-hero{margin:0 12px!important;padding:34px 22px!important;border-radius:24px!important}body.pde-faq-page .pde-faq-hero h1{font-size:clamp(42px,11vw,54px)!important}body.pde-faq-page .pde-faq-hero-note{padding:22px!important}body.pde-faq-page .pde-faq-section{padding:48px 0!important}body.pde-faq-page .pde-faq-list details{padding:0 17px!important}body.pde-faq-page .pde-faq-list summary{min-height:61px!important;font-size:14px!important}body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading{padding:23px 20px!important}body.pde-faq-page .pde-faq-booking-panel{margin:31px 14px 0!important}}
