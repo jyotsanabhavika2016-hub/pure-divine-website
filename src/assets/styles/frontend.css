@@ -2790,6 +2790,23 @@ body.pde-faq-page .pde-faq-course-route strong{display:inline!important;margin:0
 @keyframes pde-faq-learning-step{from{opacity:0;transform:translate3d(-12px,10px,0)}to{opacity:1;transform:none}}
 @keyframes pde-faq-learning-orb{from{opacity:0;transform:scale(.55)}70%{opacity:1;transform:scale(1.09)}to{opacity:1;transform:scale(1)}}
 
+/* FAQ courses correction: never hide content if animation is delayed, and keep the guidance panel compact. */
+body.pde-faq-page .pde-faq-course-layout{align-items:start!important}
+body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading{min-height:0!important;align-self:start!important}
+body.pde-faq-page .pde-faq-course-help{display:grid!important;gap:4px!important;margin-top:20px!important;padding:15px 16px!important;border:1px solid rgba(198,138,25,.34)!important;border-radius:14px!important;background:linear-gradient(145deg,#fffaf0,#f4dfad)!important;color:#103a73!important;font-family:Inter,Arial,sans-serif!important;text-decoration:none!important;transition:transform .22s ease,box-shadow .22s ease!important}
+body.pde-faq-page .pde-faq-course-help span{color:#7a6a54!important;font-size:11px!important;line-height:1.4!important}
+body.pde-faq-page .pde-faq-course-help strong{color:#103a73!important;font-size:12px!important;line-height:1.4!important}
+body.pde-faq-page .pde-faq-course-help i{padding-left:5px!important;color:#c68a19!important;font-size:16px!important;font-style:normal!important}
+body.pde-faq-page .pde-faq-course-help:hover{box-shadow:0 10px 20px rgba(7,31,69,.1)!important;transform:translateY(-3px)!important}
+@media(prefers-reduced-motion:no-preference){
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-section-heading .pde-faq-eyebrow,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-section-heading h2,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-section-heading>p,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-course-route>div,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-link{opacity:1!important;transform:none!important}
+}
+@media(max-width:640px){body.pde-faq-page .pde-faq-course-help{padding:14px!important}}
+
 /* Keep the path animation above the shared section reveal so it is visibly replayed on reload and scroll return. */
 @media(prefers-reduced-motion:no-preference){
   html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion .pde-faq-section-heading .pde-faq-eyebrow,
@@ -2810,4 +2827,13 @@ body.pde-faq-page .pde-faq-course-route strong{display:inline!important;margin:0
   html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion.is-learning-visible .pde-faq-course-route>div:nth-child(3) b{animation-delay:.75s!important}
   body.pde-faq-page .pde-faq-course-route>div{transition:border-color .22s ease,background .22s ease,box-shadow .22s ease,transform .22s ease!important}
   body.pde-faq-page .pde-faq-course-route>div:hover{border-color:rgba(198,138,25,.6)!important;background:#fffdf7!important;box-shadow:0 9px 18px rgba(7,31,69,.08)!important;transform:translateX(4px)!important}
+}
+
+/* Visibility-safe fallback: course content stays readable even if the observer has not fired yet. */
+@media(prefers-reduced-motion:no-preference){
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion:not(.is-learning-visible) .pde-faq-section-heading .pde-faq-eyebrow,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion:not(.is-learning-visible) .pde-faq-section-heading h2,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion:not(.is-learning-visible) .pde-faq-section-heading>p,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion:not(.is-learning-visible) .pde-faq-course-route>div,
+  html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion:not(.is-learning-visible) .pde-faq-link{opacity:1!important;transform:none!important}
 }
