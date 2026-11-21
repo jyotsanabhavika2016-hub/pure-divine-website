@@ -36,7 +36,7 @@ for(const file of await walk(output)){
     return `<link rel="stylesheet" href="/assets/styles/${name}">`;
   });
   html=html.replace('</head>','<link rel="stylesheet" href="/assets/styles/frontend.css">\n</head>');
-  html=html.replace('</body>','<script type="module" src="/assets/scripts/frontend.js"></script>\n<script type="module" src="/assets/scripts/chat.js"></script>\n</body>');
+  html=html.replace('</body>','<script type="module" src="/assets/scripts/frontend.js?v=site-scroll-reveal-3"></script>\n<script type="module" src="/assets/scripts/chat.js"></script>\n</body>');
   const destination=path.join(source,'pages',path.relative(output,file));
   await fs.mkdir(path.dirname(destination),{recursive:true});
   await fs.writeFile(destination,html);

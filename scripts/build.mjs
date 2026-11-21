@@ -26,6 +26,9 @@ for(const file of files){if(!file.endsWith('.html'))continue;
     return all;
   });
   html=html.replace(/(<li\b[^>]*class=")([^"]*)("[^>]*>\s*<a\b[^>]*aria-current="page"[^>]*>)/gi,'$1$2 current-menu-item$3');
+  // Keep the shared interaction bundle fresh after each visual update without
+  // requiring visitors to manually clear their browser cache.
+  html=html.replace(/src=(["'])\/assets\/scripts\/frontend\.js(?:\?[^"']*)?\1/gi,'src="/assets/scripts/frontend.js?v=site-scroll-reveal-3"');
   html=html.replace('</head>',`<meta name="site-base" content="${base}">\n</head>`);
   html=html.replace(/(<body\b[\s\S]*?<\/body>)/i,body=>body.split(/(<[^>]+>)/).map(part=>part.startsWith('<')?part:part.replaceAll('💫','<img class="emoji" draggable="false" role="img" alt="💫" src="/assets/icons/sparkle.svg">')).join(''));
   const destination=path.join(output,relative);

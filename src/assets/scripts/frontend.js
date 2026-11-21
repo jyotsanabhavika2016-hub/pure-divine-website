@@ -158,3 +158,41 @@ if(heroCounts.length){
     heroCounts.forEach(count=>observer.observe(count));
   }else heroCounts.forEach(showFinal);
 }
+
+// Give each major page section the same gentle entrance as the hero.
+// A section resets outside the viewport, so it can reveal naturally again.
+const reduceScrollMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceScrollMotion){
+  const main=document.querySelector('main, #primary');
+  const sectionSelectors=[':scope > section',':scope > article',':scope > .pde-page-shell',':scope > .pde-course-hero',':scope > .pde-course-catalog'];
+  const targets=main?[...new Set(sectionSelectors.flatMap(selector=>[...main.querySelectorAll(selector)]))].filter(element=>!element.hidden):[];
+  const childSelector='.pde-faq-list > details, .pde-course-card, .pde-service-card, .pde-benefit-card, .pde-process-step, .pde-hero-promise, .pde-contact-card, .pde-mini-card';
+  for(const target of targets){
+    target.classList.add('pde-scroll-reveal');
+    const children=[...target.querySelectorAll(childSelector)].slice(0,8);
+    children.forEach((child,index)=>{
+      child.classList.add('pde-scroll-reveal-item');
+      child.style.setProperty('--pde-reveal-delay',`${Math.min(index*75,450)}ms`);
+    });
+  }
+  const reveal=target=>{
+    target.classList.add('is-visible');
+    target.querySelectorAll('.pde-scroll-reveal-item').forEach(item=>item.classList.add('is-visible'));
+  };
+  const reset=target=>{
+    target.classList.remove('is-visible');
+    target.querySelectorAll('.pde-scroll-reveal-item').forEach(item=>item.classList.remove('is-visible'));
+  };
+  window.requestAnimationFrame(()=>{
+    document.documentElement.classList.add('pde-scroll-motion-ready');
+    if(!targets.length)return;
+    if(!('IntersectionObserver' in window)){targets.forEach(reveal);return}
+    const observer=new IntersectionObserver(entries=>{
+      for(const entry of entries){
+        if(entry.isIntersecting)reveal(entry.target);
+        else reset(entry.target);
+      }
+    },{rootMargin:'0px 0px -9% 0px',threshold:.08});
+    targets.forEach(target=>observer.observe(target));
+  });
+}
