@@ -2918,6 +2918,7 @@ body.pde-faq-page .pde-faq-guidance-mark svg{display:block!important;width:27px!
 @keyframes pde-faq-lotus-bloom{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 
 /* FAQ lower flow: keep the final panels connected without an oversized empty band. */
-body.pde-faq-page #courses{padding-bottom:34px!important}
-body.pde-faq-page #booking{padding-top:38px!important;padding-bottom:46px!important}
-@media(max-width:640px){body.pde-faq-page #courses{padding-bottom:26px!important}body.pde-faq-page #booking{padding-top:30px!important;padding-bottom:36px!important}}
+body.pde-faq-page #courses{padding:42px 0 18px!important}
+body.pde-faq-page #booking{padding:22px 0 38px!important}
+body.pde-faq-page #booking>.pde-faq-booking-questions{margin-bottom:30px!important}
+@media(max-width:640px){body.pde-faq-page #courses{padding:32px 0 16px!important}body.pde-faq-page #booking{padding:18px 0 30px!important}body.pde-faq-page #booking>.pde-faq-booking-questions{margin-bottom:24px!important}}
