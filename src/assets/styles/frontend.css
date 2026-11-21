@@ -2883,3 +2883,30 @@ body.pde-faq-page .pde-faq-note-reassurance{display:flex!important;gap:8px!impor
 body.pde-faq-page .pde-faq-note-reassurance b{display:grid!important;width:18px!important;height:18px!important;flex:0 0 18px!important;place-items:center!important;border-radius:50%!important;background:#f3d88f!important;color:#845408!important;font-size:10px!important}
 body.pde-faq-page .pde-faq-hero-note a{min-width:164px!important;margin-top:4px!important;box-shadow:0 8px 17px rgba(16,58,115,.16)!important}
 @media(max-width:640px){body.pde-faq-page .pde-faq-hero-note{gap:10px!important;padding:25px 23px!important}body.pde-faq-page .pde-faq-hero-note strong{font-size:clamp(29px,8vw,35px)!important}}
+
+/* FAQ guidance card refresh: no detached top tab, just layered, calm movement across the complete card. */
+body.pde-faq-page .pde-faq-hero-note::before{display:none!important}
+body.pde-faq-page .pde-faq-hero-note{isolation:isolate!important;overflow:hidden!important;background:linear-gradient(145deg,#fffefa 0%,#fff8e8 56%,#f3dfb1 100%)!important}
+body.pde-faq-page .pde-faq-hero-note::after{right:-58px!important;bottom:-72px!important;width:214px!important;height:214px!important;border-color:rgba(198,138,25,.27)!important;box-shadow:0 0 0 24px rgba(198,138,25,.06),0 0 0 48px rgba(198,138,25,.028)!important}
+body.pde-faq-page .pde-faq-hero-note>span{width:46px!important;height:46px!important;margin-top:1px!important;border-color:rgba(198,138,25,.5)!important;background:#fffdf7!important;box-shadow:0 0 0 7px rgba(198,138,25,.07)!important}
+body.pde-faq-page .pde-faq-note-kicker{margin-top:4px!important}
+body.pde-faq-page .pde-faq-hero-note a{width:100%!important;min-height:52px!important;margin-top:5px!important;padding:0 20px!important;border-color:#113e78!important;background:linear-gradient(135deg,#0c356d,#174b8c)!important;border-radius:16px!important;box-shadow:0 12px 24px rgba(13,56,112,.2)!important}
+body.pde-faq-page .pde-faq-hero-note a:hover{background:linear-gradient(135deg,#c38a1d,#e8ba4b)!important}
+@media(prefers-reduced-motion:no-preference){
+  body.pde-faq-page .pde-faq-hero-note{animation:pde-faq-guidance-enter .8s .16s cubic-bezier(.2,.82,.25,1) both,pde-faq-guidance-float 7s 1.2s ease-in-out infinite!important}
+  body.pde-faq-page .pde-faq-hero-note::after{animation:pde-faq-guidance-orbit 12s 1s ease-in-out infinite!important}
+  body.pde-faq-page .pde-faq-hero-note>span{animation:pde-faq-guidance-icon .72s .5s cubic-bezier(.2,.82,.25,1) both,pde-faq-guidance-glow 4.5s 1.4s ease-in-out infinite!important}
+  body.pde-faq-page .pde-faq-hero-note .pde-faq-note-kicker{animation:pde-faq-guidance-rise .48s .42s cubic-bezier(.2,.82,.25,1) both!important}
+  body.pde-faq-page .pde-faq-hero-note strong{animation:pde-faq-guidance-rise .58s .5s cubic-bezier(.2,.82,.25,1) both!important}
+  body.pde-faq-page .pde-faq-hero-note p{animation:pde-faq-guidance-rise .58s .6s cubic-bezier(.2,.82,.25,1) both!important}
+  body.pde-faq-page .pde-faq-note-reassurance{animation:pde-faq-guidance-rise .5s .69s cubic-bezier(.2,.82,.25,1) both!important}
+  body.pde-faq-page .pde-faq-hero-note a{animation:pde-faq-guidance-rise .56s .78s cubic-bezier(.2,.82,.25,1) both,pde-faq-guidance-cta 3.8s 1.7s ease-in-out infinite!important}
+}
+@keyframes pde-faq-guidance-enter{from{opacity:0;transform:translate3d(22px,30px,0) scale(.96)}to{opacity:1;transform:none}}
+@keyframes pde-faq-guidance-float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-5px,0)}}
+@keyframes pde-faq-guidance-orbit{0%,100%{transform:translate3d(0,0,0) rotate(0deg);opacity:.74}50%{transform:translate3d(-11px,-7px,0) rotate(7deg);opacity:1}}
+@keyframes pde-faq-guidance-icon{from{opacity:0;transform:scale(.55) rotate(-18deg)}to{opacity:1;transform:none}}
+@keyframes pde-faq-guidance-glow{0%,100%{box-shadow:0 0 0 7px rgba(198,138,25,.07)}50%{box-shadow:0 0 0 11px rgba(198,138,25,.14)}}
+@keyframes pde-faq-guidance-rise{from{opacity:0;transform:translate3d(0,13px,0)}to{opacity:1;transform:none}}
+@keyframes pde-faq-guidance-cta{0%,100%{box-shadow:0 12px 24px rgba(13,56,112,.2)}50%{box-shadow:0 15px 29px rgba(13,56,112,.29)}}
+@media(prefers-reduced-motion:reduce){body.pde-faq-page .pde-faq-hero-note,body.pde-faq-page .pde-faq-hero-note::after,body.pde-faq-page .pde-faq-hero-note>span,body.pde-faq-page .pde-faq-hero-note .pde-faq-note-kicker,body.pde-faq-page .pde-faq-hero-note strong,body.pde-faq-page .pde-faq-hero-note p,body.pde-faq-page .pde-faq-note-reassurance,body.pde-faq-page .pde-faq-hero-note a{animation:none!important}}
