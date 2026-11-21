@@ -2866,3 +2866,10 @@ body.pde-faq-page .pde-faq-course-help{margin-top:16px!important}
 @media(max-width:1050px){body.pde-faq-page .pde-faq-course-layout{grid-template-columns:minmax(350px,.9fr) minmax(0,1.1fr)!important;gap:30px!important}}
 @media(max-width:920px){body.pde-faq-page .pde-faq-course-layout{grid-template-columns:1fr!important}body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading{max-width:640px!important}}
 @media(max-width:640px){body.pde-faq-page .pde-faq-course-layout{padding:20px!important}body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading{padding:23px 20px!important}body.pde-faq-page .pde-faq-course-tip{margin-top:2px!important}}
+
+/* FAQ hero CTA: keep the guidance action readable against its navy button. */
+body.pde-faq-page .pde-faq-hero-note a{display:inline-flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;width:auto!important;min-width:154px!important;min-height:43px!important;margin-top:8px!important;padding:0 16px!important;border-color:#103a73!important;background:#103a73!important;color:#fffaf0!important;font-family:Inter,Arial,sans-serif!important;font-size:12px!important;font-weight:800!important;letter-spacing:.01em!important;line-height:1!important;text-decoration:none!important}
+body.pde-faq-page .pde-faq-hero-note a span{display:inline!important;visibility:visible!important;opacity:1!important;color:#fffaf0!important;font:inherit!important;white-space:nowrap!important;animation:none!important;transform:none!important}
+body.pde-faq-page .pde-faq-hero-note a i{display:inline-block!important;margin:0!important;color:#efcc77!important;font-size:17px!important;line-height:1!important}
+body.pde-faq-page .pde-faq-hero-note a:hover{background:#c68a19!important;color:#071f45!important}
+body.pde-faq-page .pde-faq-hero-note a:hover span,body.pde-faq-page .pde-faq-hero-note a:hover i{color:#071f45!important}
