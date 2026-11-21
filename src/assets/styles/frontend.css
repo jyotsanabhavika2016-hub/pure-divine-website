@@ -2837,3 +2837,16 @@ body.pde-faq-page .pde-faq-course-help:hover{box-shadow:0 10px 20px rgba(7,31,69
   html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion:not(.is-learning-visible) .pde-faq-course-route>div,
   html.pde-scroll-motion-ready body.pde-faq-page .pde-faq-course-layout.pde-learning-motion:not(.is-learning-visible) .pde-faq-link{opacity:1!important;transform:none!important}
 }
+
+/* Final course-panel safeguard: headings and learning steps are never hidden by animation state. */
+body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading .pde-faq-eyebrow,
+body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading h2,
+body.pde-faq-page .pde-faq-course-layout .pde-faq-section-heading>p,
+body.pde-faq-page .pde-faq-course-layout .pde-faq-course-route>div,
+body.pde-faq-page .pde-faq-course-layout .pde-faq-link{opacity:1!important;transform:none!important;animation:none!important}
+@media(prefers-reduced-motion:no-preference){
+  body.pde-faq-page .pde-faq-course-route b{animation:pde-faq-course-orb-breathe 3.2s ease-in-out infinite!important}
+  body.pde-faq-page .pde-faq-course-route>div:nth-child(2) b{animation-delay:.45s!important}
+  body.pde-faq-page .pde-faq-course-route>div:nth-child(3) b{animation-delay:.9s!important}
+}
+@keyframes pde-faq-course-orb-breathe{0%,100%{box-shadow:0 4px 10px rgba(198,138,25,.12);transform:scale(1)}50%{box-shadow:0 7px 17px rgba(198,138,25,.28);transform:scale(1.06)}}
