@@ -18,6 +18,14 @@ const pageDescriptions={
   '/refund-policy/':'Read the Pure Divine Energy refund policy.',
   '/disclaimer/':'Read the Pure Divine Energy wellness and website disclaimer.'
 };
+const courseData={
+  '/learn/package/reiki-level-1/':{name:'Reiki Level 1',price:'5111',description:'Begin your Reiki journey with essential healing principles, self-practice and spiritual awareness.'},
+  '/learn/package/reiki-level-2/':{name:'Reiki Level 2',price:'7111',description:'Deepen your Reiki study through symbols, distance healing and more confident practice.'},
+  '/learn/package/reiki-level-3-and-master-teacher-level-4/':{name:'Reiki Level 3 and Master Teacher Level 4',price:'15111',description:'Move into advanced Reiki practice and the teacher path.'},
+  '/learn/package/ricky-grandmaster-full-course/':{name:'Reiki Grandmaster Full Course',price:'21511',description:'Explore a complete advanced learning path for deeper Reiki study and continued practice.'},
+  '/learn/package/basic-colour-prana-healing-course/':{name:'Basic Colour Prana Healing',price:'7111',description:'Explore colour vibration, pranic principles and simple approaches to energy awareness.'},
+  '/learn/package/advance-prana-energy/':{name:'Advanced Prana Energy',price:'9999',description:'Develop a deeper understanding of pranic techniques and refined energy practice.'}
+};
 const noIndexRoutes=['/author/','/category/','/verify/','/learn/checkout/','/blog/page/'];
 const escapeAttribute=value=>String(value).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const stripTags=value=>String(value).replace(/<[^>]*>/g,' ').replace(/&#(\d+);/g,(_,code)=>String.fromCodePoint(Number(code))).replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
@@ -50,6 +58,17 @@ function seoMarkup(html,route){
     email:'hello@puredivineenergy.com',
     address:{'@type':'PostalAddress',streetAddress:'Bani Park',addressLocality:'Jaipur',addressRegion:'Rajasthan',addressCountry:'IN'}
   }).replace(/</g,'\\u003c')}</script>`);
+  if(courseData[route]){
+    const course=courseData[route];
+    additions.push(`<script type="application/ld+json">${JSON.stringify({
+      '@context':'https://schema.org',
+      '@type':'Course',
+      name:course.name,
+      description:course.description,
+      provider:{'@type':'Organization',name:'Pure Divine Energy Healing Centre',url:siteOrigin},
+      offers:{'@type':'Offer',price:course.price,priceCurrency:'INR',url:canonical}
+    }).replace(/</g,'\\u003c')}</script>`);
+  }
   return additions.join('\n');
 }
 if(!output.startsWith(project+path.sep)||output===source||output.startsWith(source+path.sep))throw Error('Output must be a separate directory inside this project.');
@@ -77,6 +96,11 @@ for(const file of files){if(!file.endsWith('.html'))continue;
   // the archived source markup available for rollback, but exclude it from the
   // generated production page so it cannot create duplicate content.
   if(route==='/courses/')html=html.replace(/\s*<section class="pde-courses-hero">[\s\S]*?<\/main>/,'\n</main>');
+  // The archived WordPress comment endpoint does not exist on this static
+  // deployment. Remove that unusable interface and its archive links from the
+  // generated site rather than presenting visitors with a broken form.
+  html=html.replace(/\s*<section class="pde-section pde-comments-section">[\s\S]*?<\/section>/g,'');
+  html=html.replace(/\s*<span class="comments-link">[\s\S]*?<\/span>/g,'');
   html=html.replace(/(<a\b[^>]*href=["'])([^"']+)(["'][^>]*)(>)/gi,(all,start,href,attrs,end)=>{
     if(href===route&&/menu-link|nav-link/.test(attrs))return `${start}${href}${attrs} aria-current="page"${end}`;
     return all;
