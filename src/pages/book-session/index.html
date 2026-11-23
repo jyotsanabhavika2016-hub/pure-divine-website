@@ -63,67 +63,64 @@
 
 	
 	
-<div style="height:12px" aria-hidden="true" class="wp-block-spacer"></div>
+<section class="pde-booking-enquiry" aria-labelledby="booking-enquiry-title">
+<div class="pde-booking-enquiry__intro">
+<span class="pde-v2-eyebrow">Session enquiry</span>
+<h1 id="booking-enquiry-title">Tell us how we can support you.</h1>
+<p>Share a few details about the support you are looking for. We will review your enquiry and confirm the suitable next step and availability directly.</p>
+<div class="pde-booking-enquiry__assurance" aria-label="What to expect"><span>Personal guidance</span><span>In-person or distance support</span><span>No pressure to decide today</span></div>
+</div>
 
-
-
-<p class="wp-block-paragraph"></p>
-
-
-
-<div class="wpcf7 no-js" id="wpcf7-f72-p73-o1" lang="en-US" dir="ltr" data-wpcf7-id="72">
+<div class="wpcf7 no-js pde-booking-enquiry__form" id="wpcf7-f72-p73-o1" lang="en-US" dir="ltr" data-wpcf7-id="72">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action="/book-session/#wpcf7-f72-p73-o1" method="post" class="wpcf7-form init pde-cf7-form" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<form action="/book-session/#wpcf7-f72-p73-o1" method="post" class="wpcf7-form init pde-cf7-form" aria-label="Session enquiry form" data-status="init">
 <fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="72" /><input type="hidden" name="_wpcf7_version" value="6.1.5" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f72-p73-o1" /><input type="hidden" name="_wpcf7_container_post" value="73" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
 </fieldset>
 <div class="pde-cf7-grid">
 	<div class="pde-field">
-		<p><label>Full Name*</label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your full name" value="" type="text" name="your-name" /></span>
+		<p><label for="booking-name">Full Name <span aria-hidden="true">*</span></label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-name"><input id="booking-name" size="40" maxlength="100" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" autocomplete="name" placeholder="Your full name" value="" type="text" name="your-name" required /></span>
 		</p>
 	</div>
 	<div class="pde-field">
-		<p><label>Phone / WhatsApp*</label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="+91 XXXXX XXXXX" value="" type="tel" name="your-phone" /></span>
+		<p><label for="booking-phone">Phone / WhatsApp <span aria-hidden="true">*</span></label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-phone"><input id="booking-phone" size="40" maxlength="25" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" autocomplete="tel" inputmode="tel" placeholder="+91 XXXXX XXXXX" value="" type="tel" name="your-phone" required /></span>
 		</p>
 	</div>
 	<div class="pde-field pde-field-full">
-		<p><label>Email Address*</label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="your@email.com" value="" type="email" name="your-email" /></span>
+		<p><label for="booking-email">Email Address <span aria-hidden="true">*</span></label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input id="booking-email" size="40" maxlength="254" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" autocomplete="email" placeholder="your@email.com" value="" type="email" name="your-email" required /></span>
 		</p>
 	</div>
 	<div class="pde-field">
-		<p><label>Interested In</label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-service"><select class="wpcf7-form-control wpcf7-select" aria-invalid="false" name="your-service"><option value="Reiki Healing Session">Reiki Healing Session</option><option value="Distance Healing">Distance Healing</option><option value="1-on-1 Counselling">1-on-1 Counselling</option><option value="Chakra Balancing">Chakra Balancing</option><option value="Aura Cleansing">Aura Cleansing</option><option value="Course Guidance">Course Guidance</option></select></span>
+		<p><label for="booking-service">Interested In</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-service"><select id="booking-service" class="wpcf7-form-control wpcf7-select" aria-invalid="false" name="your-service"><option value="">Select an option</option><option value="Reiki Healing Session">Reiki Healing Session</option><option value="Distance Healing">Distance Healing</option><option value="1-on-1 Counselling">1-on-1 Counselling</option><option value="Chakra Balancing">Chakra Balancing</option><option value="Aura Cleansing">Aura Cleansing</option><option value="Course Guidance">Course Guidance</option></select></span>
 		</p>
 	</div>
 	<div class="pde-field">
-		<p><label>Preferred Date</label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-date"><input class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" value="" type="date" name="your-date" /></span>
+		<p><label for="booking-date">Preferred Date</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-date"><input id="booking-date" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" value="" type="date" name="your-date" /></span>
 		</p>
 	</div>
 	<div class="pde-field">
-		<p><label>Preferred Time</label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-time"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="e.g. 5 PM to 7 PM" value="" type="text" name="your-time" /></span>
+		<p><label for="booking-time">Preferred Time Window</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-time"><input id="booking-time" size="40" maxlength="100" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="e.g. 5 PM to 7 PM" value="" type="text" name="your-time" /></span>
 		</p>
 	</div>
 	<div class="pde-field pde-field-full">
-		<p><label>Your Message</label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Tell us briefly what kind of support or healing you are looking for" name="your-message"></textarea></span>
+		<p><label for="booking-message">Your Message</label><br />
+<span class="wpcf7-form-control-wrap" data-name="your-message"><textarea id="booking-message" cols="40" rows="6" maxlength="1000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Tell us briefly what kind of support or healing you are looking for" name="your-message"></textarea></span>
 		</p>
 	</div>
 	<div class="pde-field pde-field-full pde-submit-wrap">
-		<p><input class="wpcf7-form-control wpcf7-submit has-spinner pde-cf7-submit" type="submit" value="Book My Session" />
+		<p><input class="wpcf7-form-control wpcf7-submit has-spinner pde-cf7-submit" type="submit" value="Send Session Enquiry" />
 		</p>
 	</div>
 </div><div class="wpcf7-response-output" aria-hidden="true"></div>
 </form>
 </div>
-
-
-
-
-<p class="wp-block-paragraph"></p>
+<aside class="pde-booking-enquiry__fallback" aria-label="Direct contact options"><p><strong>Prefer to speak directly?</strong> Call, WhatsApp or email us and we will guide you.</p><div><a href="tel:+917691011395">Call +91 76910 11395</a><a href="https://wa.me/917691011395" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a><a href="mailto:hello@puredivineenergy.com">Email us</a></div></aside>
+</section>
 
 	
 	

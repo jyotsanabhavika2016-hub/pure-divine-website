@@ -32,8 +32,13 @@ document.addEventListener('submit',event=>{
   if(!form.reportValidity())return;
   let status=form.querySelector('.frontend-form-status');
   if(!status){status=document.createElement('p');status.className='frontend-form-status';status.setAttribute('role','status');form.append(status)}
-  status.textContent='Frontend preview only. Your information has not been sent, saved, verified, or charged.';
+  status.textContent='Online submissions are being prepared. Your details have not been sent. Please call, WhatsApp, or email us directly for support.';
 });
+for(const dateInput of document.querySelectorAll('input[type="date"][name="your-date"]')){
+  const today=new Date();
+  today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+  dateInput.min=today.toISOString().slice(0,10);
+}
 // Preserve the original checkout label without integrating a payment provider.
 for(const button of document.querySelectorAll('form[action*="/checkout/"] button[type="submit"]'))button.textContent='Continue to Payment';
 
