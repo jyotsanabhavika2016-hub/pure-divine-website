@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /verify/
+Disallow: /learn/checkout/
+Disallow: /author/
+Disallow: /category/
+
+Sitemap: https://puredivineenergy.com/sitemap.xml

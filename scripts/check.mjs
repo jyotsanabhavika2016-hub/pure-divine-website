@@ -6,6 +6,9 @@ const root=path.join(project,process.env.OUTPUT_DIR||'dist');
 async function walk(dir){const files=[];for(const entry of await fs.readdir(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);files.push(...(entry.isDirectory()?await walk(file):[file]))}return files}
 const files=await walk(root);const htmlFiles=files.filter(file=>file.endsWith('.html'));
 const failures=[];const cssFiles=new Set();
+for(const required of ['robots.txt','sitemap.xml']){
+  try{await fs.access(path.join(root,required))}catch{failures.push({file:required,error:'Missing required SEO file'})}
+}
 async function checkReference(raw,file,base){
   if(!raw||/^(?:data:|https?:|mailto:|tel:|#|\/\/)/i.test(raw))return;
   let target=raw.split('#')[0].split('?')[0];if(!target)return;
@@ -15,12 +18,14 @@ async function checkReference(raw,file,base){
 }
 for(const file of htmlFiles){
   const html=await fs.readFile(file,'utf8');const base=html.match(/name="site-base" content="([^"]+)"/)?.[1]||'/';
+  if(!/<meta\s+name=["']description["']/i.test(html))failures.push({file:path.relative(root,file),reference:'Missing meta description'});
+  if(!/<meta\s+property=["']og:title["']/i.test(html))failures.push({file:path.relative(root,file),reference:'Missing Open Graph title'});
   if(html.includes('<!-- include:'))failures.push({file:path.relative(root,file),reference:'Unresolved partial'});
   for(const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/g))await checkReference(match[1],file,base);
 }
 const base=(await fs.readFile(path.join(root,'index.html'),'utf8')).match(/name="site-base" content="([^"]+)"/)?.[1]||'/';
 for(const file of cssFiles){const css=await fs.readFile(file,'utf8');for(const match of css.matchAll(/url\(\s*["']?([^)'"\s]+)["']?\s*\)/g))await checkReference(match[1],file,base)}
-for(const file of ['scripts/build.mjs','server.mjs','src/assets/scripts/frontend.js','src/assets/scripts/chat.js']){
+for(const file of ['scripts/build.mjs','server.mjs','src/assets/scripts/frontend.js','src/assets/scripts/chat.js','src/assets/scripts/tracking.js']){
   const result=spawnSync(process.execPath,['--check',path.join(project,file)],{encoding:'utf8'});
   if(result.status!==0)failures.push({file,error:result.stderr});
 }
