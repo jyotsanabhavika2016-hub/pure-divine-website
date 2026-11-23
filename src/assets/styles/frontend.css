@@ -2918,7 +2918,237 @@ body.pde-faq-page .pde-faq-guidance-mark svg{display:block!important;width:27px!
 @keyframes pde-faq-lotus-bloom{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 
 /* FAQ lower flow: keep the final panels connected without an oversized empty band. */
+body.pde-faq-page #sessions{padding-bottom:0!important}
 body.pde-faq-page #courses{padding:42px 0 18px!important}
 body.pde-faq-page #booking{padding:22px 0 38px!important}
 body.pde-faq-page #booking>.pde-faq-booking-questions{margin-bottom:30px!important}
-@media(max-width:640px){body.pde-faq-page #courses{padding:32px 0 16px!important}body.pde-faq-page #booking{padding:18px 0 30px!important}body.pde-faq-page #booking>.pde-faq-booking-questions{margin-bottom:24px!important}}
+body.pde-faq-page #courses{padding-top:18px!important;border-top:1px solid rgba(198,138,25,.23)!important}
+@media(max-width:640px){body.pde-faq-page #sessions{padding-bottom:0!important}body.pde-faq-page #courses{padding:16px 0!important}body.pde-faq-page #booking{padding:18px 0 30px!important}body.pde-faq-page #booking>.pde-faq-booking-questions{margin-bottom:24px!important}}
+
+/* Course FAQ follow-up: turns the lower empty area into a clear, helpful next step. */
+body.pde-faq-page .pde-faq-course-answers{display:grid!important;gap:14px!important;align-content:start!important;min-width:0!important}
+body.pde-faq-page .pde-faq-course-next{display:grid!important;grid-template-columns:36px minmax(0,1fr) auto!important;gap:13px!important;align-items:center!important;margin:0!important;padding:16px 18px!important;border:1px solid rgba(198,138,25,.34)!important;border-radius:16px!important;background:linear-gradient(125deg,#fffdf8,#f4e0ae)!important;box-shadow:0 10px 22px rgba(7,31,69,.055)!important}
+body.pde-faq-page .pde-faq-course-next-icon{display:grid!important;width:34px!important;height:34px!important;place-items:center!important;border-radius:50%!important;background:#f3d487!important;color:#9f6708!important;font-size:14px!important}
+body.pde-faq-page .pde-faq-course-next small{display:block!important;margin-bottom:3px!important;color:#a56c0b!important;font-family:Inter,Arial,sans-serif!important;font-size:9px!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+body.pde-faq-page .pde-faq-course-next strong{display:block!important;max-width:38ch!important;color:#103a73!important;font-family:Inter,Arial,sans-serif!important;font-size:12px!important;line-height:1.48!important}
+body.pde-faq-page .pde-faq-course-next a{display:inline-flex!important;align-items:center!important;gap:8px!important;color:#103a73!important;font-family:Inter,Arial,sans-serif!important;font-size:11px!important;font-weight:800!important;text-decoration:none!important;white-space:nowrap!important}
+body.pde-faq-page .pde-faq-course-next a i{color:#bd7e10!important;font-size:16px!important;font-style:normal!important;transition:transform .2s ease!important}
+body.pde-faq-page .pde-faq-course-next a:hover i{transform:translateX(3px)!important}
+body.pde-faq-page .pde-faq-course-next-steps{display:grid!important;grid-column:1/-1!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;margin-top:1px!important;padding-top:12px!important;border-top:1px solid rgba(198,138,25,.3)!important}
+body.pde-faq-page .pde-faq-course-next-steps span{display:grid!important;grid-template-columns:22px minmax(0,1fr)!important;gap:6px!important;align-items:center!important;color:#5f7087!important;font-family:Inter,Arial,sans-serif!important;font-size:10px!important;line-height:1.35!important}
+body.pde-faq-page .pde-faq-course-next-steps b{display:grid!important;width:22px!important;height:22px!important;place-items:center!important;border-radius:50%!important;background:rgba(198,138,25,.14)!important;color:#a56c0b!important;font-size:9px!important}
+@media(max-width:640px){body.pde-faq-page .pde-faq-course-next{grid-template-columns:32px minmax(0,1fr)!important;gap:11px!important;padding:15px!important}body.pde-faq-page .pde-faq-course-next-icon{width:31px!important;height:31px!important}body.pde-faq-page .pde-faq-course-next a{grid-column:2!important;margin-top:1px!important}}
+@media(max-width:640px){body.pde-faq-page .pde-faq-course-next-steps{grid-template-columns:1fr!important;gap:6px!important;margin-top:4px!important}}
+
+/* Booking panel contrast: prevent the general FAQ heading colour from overriding the navy-panel treatment. */
+body.pde-faq-page #booking .pde-faq-booking-panel h2{color:#fffaf0!important;text-shadow:0 2px 14px rgba(0,0,0,.16)!important}
+body.pde-faq-page #booking .pde-faq-booking-panel p{color:rgba(255,250,240,.86)!important}
+body.pde-faq-page #booking .pde-faq-booking-panel .pde-faq-eyebrow{color:#efcc77!important}
+
+/* Booking actions: a calm sequential reveal with a quiet living highlight. */
+@media(prefers-reduced-motion:no-preference){
+  body.pde-faq-page #booking .pde-faq-contact-actions{animation:pde-faq-actions-wrap-in .55s .18s cubic-bezier(.2,.82,.25,1) both!important}
+  body.pde-faq-page #booking .pde-faq-action{animation:pde-faq-action-slide-in .58s cubic-bezier(.2,.82,.25,1) both!important}
+  body.pde-faq-page #booking .pde-faq-action:nth-child(1){animation-delay:.34s!important}
+  body.pde-faq-page #booking .pde-faq-action:nth-child(2){animation-delay:.46s!important}
+  body.pde-faq-page #booking .pde-faq-action:nth-child(3){animation-delay:.58s!important}
+  body.pde-faq-page #booking .pde-faq-action-gold{animation:pde-faq-action-slide-in .58s .34s cubic-bezier(.2,.82,.25,1) both,pde-faq-gold-action-glow 4.2s 1.2s ease-in-out infinite!important}
+  body.pde-faq-page #booking .pde-faq-action::after{animation:pde-faq-action-arrow-drift 2.7s ease-in-out infinite!important}
+  body.pde-faq-page #booking .pde-faq-action:nth-child(2)::after{animation-delay:.4s!important}
+  body.pde-faq-page #booking .pde-faq-action:nth-child(3)::after{animation-delay:.8s!important}
+}
+body.pde-faq-page #booking .pde-faq-action:hover{border-color:rgba(239,204,119,.72)!important;box-shadow:0 11px 23px rgba(0,0,0,.15)!important}
+@keyframes pde-faq-actions-wrap-in{from{opacity:0;transform:translate3d(18px,0,0)}to{opacity:1;transform:none}}
+@keyframes pde-faq-action-slide-in{from{opacity:0;transform:translate3d(24px,0,0)}to{opacity:1;transform:none}}
+@keyframes pde-faq-gold-action-glow{0%,100%{box-shadow:0 9px 18px rgba(0,0,0,.13)}50%{box-shadow:0 14px 28px rgba(239,204,119,.26)}}
+@keyframes pde-faq-action-arrow-drift{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){body.pde-faq-page #booking .pde-faq-contact-actions,body.pde-faq-page #booking .pde-faq-action,body.pde-faq-page #booking .pde-faq-action::after{animation:none!important}}
+
+/* FAQ hero refresh: use the existing lotus scene softly under the navy overlay, with a more measured headline scale. */
+body.pde-faq-page .pde-faq-hero{padding:clamp(40px,5.3vw,64px) clamp(24px,5vw,64px)!important;background:radial-gradient(circle at 9% 92%,rgba(239,204,119,.13),transparent 25%),linear-gradient(96deg,rgba(7,31,69,.96) 0%,rgba(8,39,82,.91) 46%,rgba(8,39,82,.7) 100%),url("/assets/pde/serene-zen-stones-lotus-glow.png") center/cover!important}
+body.pde-faq-page .pde-faq-hero-grid{position:relative!important;z-index:2!important;gap:clamp(32px,6vw,78px)!important}
+body.pde-faq-page .pde-faq-hero h1{max-width:12ch!important;margin:13px 0 15px!important;font-size:clamp(42px,4.75vw,62px)!important;line-height:1.04!important}
+body.pde-faq-page .pde-faq-hero>div>div>p{max-width:49ch!important;font-size:15px!important;line-height:1.62!important}
+body.pde-faq-page .pde-faq-topic-list{margin-top:24px!important}
+body.pde-faq-page .pde-faq-hero-note{border-color:rgba(239,204,119,.58)!important;box-shadow:0 22px 36px rgba(0,0,0,.2)!important}
+@media(max-width:640px){body.pde-faq-page .pde-faq-hero{padding:32px 22px!important;background-position:64% center!important}body.pde-faq-page .pde-faq-hero h1{font-size:clamp(40px,10vw,52px)!important}}
+
+/* Daily affirmation refresh: one complete reflection composition instead of a sparse side panel. */
+body .pde-home-quote-band{padding:clamp(38px,5vw,62px) 0!important;background:linear-gradient(90deg,rgba(251,247,239,.96),rgba(251,247,239,.78)),url("/assets/pde/serene-zen-stones-lotus-glow.png") center/cover!important}
+body .pde-affirmation-card{display:grid!important;grid-template-columns:246px minmax(0,1fr)!important;grid-template-rows:auto auto auto!important;grid-template-areas:"intro quote" "intro ritual" "intro timer"!important;gap:14px clamp(26px,4vw,58px)!important;align-items:center!important;padding:12px!important;border:1px solid rgba(198,138,25,.38)!important;border-radius:28px!important;background:rgba(255,253,248,.92)!important;box-shadow:0 20px 42px rgba(7,31,69,.1)!important}
+body .pde-affirmation-card::before{display:none!important}
+body .pde-affirmation-intro{grid-area:intro!important;display:flex!important;min-height:100%!important;box-sizing:border-box!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:14px!important;padding:31px 28px!important;border:0!important;border-radius:20px!important;background:linear-gradient(150deg,#092653,#174682)!important;text-align:left!important}
+body .pde-affirmation-card .pde-quote-kicker{color:#f0ca70!important;font-size:10px!important;font-weight:800!important;letter-spacing:.16em!important}
+body .pde-affirmation-mark{width:44px!important;height:44px!important;margin:0!important;border-color:rgba(240,202,112,.55)!important;background:rgba(255,255,255,.08)!important;color:#f0ca70!important;font-size:18px!important}
+body .pde-affirmation-moment{color:rgba(255,249,237,.82)!important;font-size:12px!important;font-weight:650!important}
+body .pde-affirmation-intro-note{max-width:17ch!important;margin-top:2px!important;padding-top:13px!important;border-top:1px solid rgba(240,202,112,.26)!important;color:rgba(255,249,237,.66)!important;font-size:11px!important;line-height:1.55!important}
+body .pde-affirmation-card .pde-home-quote{grid-area:quote!important;max-width:760px!important;margin:0!important;padding:6px 20px 3px 28px!important;color:#123a73!important;font-size:clamp(28px,2.65vw,41px)!important;font-style:normal!important;line-height:1.18!important;text-align:left!important}
+body .pde-affirmation-card .pde-home-quote::before{left:0!important;color:#d09a2d!important}
+body .pde-affirmation-ritual{grid-area:ritual!important;grid-column:auto!important;width:calc(100% - 28px)!important;margin:0 0 0 28px!important;border-top-color:rgba(198,138,25,.28)!important;border-bottom-color:rgba(198,138,25,.22)!important}
+body .pde-breath-timer{grid-area:timer!important;grid-column:auto!important;width:calc(100% - 28px)!important;margin:0 0 0 28px!important;background:rgba(255,250,239,.78)!important}
+@media(max-width:760px){body .pde-home-quote-band{padding:32px 0!important}body .pde-affirmation-card{grid-template-columns:1fr!important;grid-template-rows:auto!important;grid-template-areas:"intro" "quote" "ritual" "timer"!important;gap:17px!important;padding:9px!important;border-radius:23px!important}body .pde-affirmation-intro{min-height:128px!important;padding:25px 23px!important;border-radius:16px!important}body .pde-affirmation-intro-note{max-width:none!important}body .pde-affirmation-card .pde-home-quote{padding:3px 17px 4px 24px!important;font-size:clamp(27px,7.5vw,35px)!important}body .pde-affirmation-ritual,body .pde-breath-timer{width:calc(100% - 34px)!important;margin-left:24px!important}body .pde-affirmation-ritual{grid-template-columns:1fr!important;border-bottom:0!important}body .pde-affirmation-ritual span{justify-content:flex-start!important;padding:7px 0!important}body .pde-affirmation-ritual span+span{border-left:0!important;border-top:1px solid rgba(198,138,25,.17)!important}body .pde-breath-timer{margin-bottom:16px!important}}
+
+/* Benefits of Energy Healing: turn the heading and cards into one connected Body–Mind–Soul journey. */
+body .pde-benefits-section{position:relative!important;overflow:hidden!important;padding:clamp(58px,6vw,84px) 0!important;background:radial-gradient(circle at 8% 90%,rgba(198,138,25,.08),transparent 27%),linear-gradient(180deg,#fffdf8 0%,#f8efdf 100%)!important}
+body .pde-benefits-section::before{position:absolute!important;top:92px!important;left:50%!important;width:420px!important;height:420px!important;border:1px solid rgba(198,138,25,.1)!important;border-radius:50%!important;box-shadow:0 0 0 34px rgba(198,138,25,.025)!important;content:""!important;transform:translateX(-50%)!important}
+body .pde-benefits-section .pde-shell{position:relative!important;z-index:1!important}
+body .pde-benefits-section .pde-section-head{max-width:760px!important;margin:0 auto 24px!important}
+body .pde-benefits-section .pde-section-head h2{margin:14px 0 13px!important;color:#402646!important;font-size:clamp(38px,4.2vw,58px)!important;line-height:1.08!important}
+body .pde-benefits-section .pde-section-head p{max-width:650px!important;margin-inline:auto!important;color:#6a6170!important;font-size:16px!important;line-height:1.65!important}
+body .pde-benefit-track{display:flex!important;align-items:center!important;justify-content:center!important;gap:12px!important;margin:0 auto 30px!important;color:#133b73!important;font-family:Inter,Arial,sans-serif!important;font-size:12px!important;font-weight:800!important}
+body .pde-benefit-track span{display:inline-flex!important;align-items:center!important;gap:7px!important;white-space:nowrap!important}
+body .pde-benefit-track b{display:grid!important;width:24px!important;height:24px!important;place-items:center!important;border-radius:50%!important;background:#f1d58d!important;color:#80540b!important;font-size:9px!important}
+body .pde-benefit-track i{width:42px!important;height:1px!important;background:linear-gradient(90deg,#d09a2d,rgba(208,154,45,.22))!important}
+body .pde-benefits-section .pde-benefit-grid{gap:20px!important}
+body .pde-benefits-section .pde-benefit-card{position:relative!important;min-height:286px!important;padding:29px!important;border-color:rgba(198,138,25,.29)!important;border-radius:22px!important;background:rgba(255,254,250,.88)!important;box-shadow:0 14px 28px rgba(7,31,69,.06)!important;transition:transform .25s ease,box-shadow .25s ease!important}
+body .pde-benefits-section .pde-benefit-card::before{position:absolute!important;top:0!important;left:29px!important;width:45px!important;height:3px!important;border-radius:0 0 3px 3px!important;background:#d09a2d!important;content:""!important}
+body .pde-benefits-section .pde-benefit-card:hover{box-shadow:0 19px 34px rgba(7,31,69,.12)!important;transform:translateY(-5px)!important}
+body .pde-benefits-section .pde-benefit-card.pde-dark-surface{background:linear-gradient(145deg,#0a2a5a,#174a89)!important}
+@media(max-width:640px){body .pde-benefits-section{padding:47px 0!important}body .pde-benefit-track{gap:7px!important;margin-bottom:23px!important;font-size:11px!important}body .pde-benefit-track i{width:18px!important}body .pde-benefit-track b{width:22px!important;height:22px!important}body .pde-benefits-section .pde-benefit-card{min-height:0!important;padding:25px!important}}
+/* About-the-healer CTA: a quiet invitation, not a distracting animation. */
+body .pde-about-healer-cta {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 0.65rem !important;
+	position: relative !important;
+	isolation: isolate !important;
+	overflow: hidden !important;
+	transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease !important;
+}
+
+body .pde-about-healer-cta > span {
+	display: inline-block !important;
+	line-height: 1 !important;
+	transition: transform 220ms ease !important;
+}
+
+body .pde-about-healer-cta::before {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: -45%;
+	width: 28%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.36), transparent);
+	content: "";
+	transform: skewX(-18deg);
+	pointer-events: none;
+}
+
+body .pde-about-healer-cta:hover,
+body .pde-about-healer-cta:focus-visible {
+	transform: translateY(-3px) !important;
+	filter: saturate(1.06) !important;
+	box-shadow: 0 16px 30px rgba(193, 126, 10, 0.3) !important;
+}
+
+body .pde-about-healer-cta:hover > span,
+body .pde-about-healer-cta:focus-visible > span {
+	transform: translateX(4px) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	body .pde-about-healer-cta {
+		animation: pde-about-healer-cta-enter 620ms 130ms cubic-bezier(0.22, 1, 0.36, 1) both,
+			pde-about-healer-cta-breathe 4.2s 1s ease-in-out infinite !important;
+	}
+
+	body .pde-about-healer-cta::before {
+		animation: pde-about-healer-cta-sheen 5.8s 1.2s ease-in-out infinite !important;
+	}
+
+	body .pde-about-healer-cta > span {
+		animation: pde-about-healer-arrow 2.5s 900ms ease-in-out infinite !important;
+	}
+}
+
+@keyframes pde-about-healer-cta-enter {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pde-about-healer-cta-breathe {
+	0%, 100% { box-shadow: 0 10px 21px rgba(193, 126, 10, 0.16); }
+	50% { box-shadow: 0 15px 28px rgba(193, 126, 10, 0.29); }
+}
+
+@keyframes pde-about-healer-cta-sheen {
+	0%, 64%, 100% { left: -45%; opacity: 0; }
+	70% { opacity: 0.95; }
+	88% { left: 118%; opacity: 0; }
+}
+
+@keyframes pde-about-healer-arrow {
+	0%, 100% { transform: translateX(0); }
+	50% { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body .pde-about-healer-cta,
+	body .pde-about-healer-cta::before,
+	body .pde-about-healer-cta > span {
+		animation: none !important;
+	}
+}
+/* Dedicated Courses page: intentionally distinct from the homepage and focused on course choice. */
+body .pde-courses-page > :not(.pde-course-refresh) { display: none !important; }
+body .pde-courses-page { padding: 0 !important; background: #fffaf1 !important; }
+body .pde-course-refresh { color: #113b76; background: #fffaf1; }
+body .pde-course-refresh__wrap { width: min(calc(100% - 48px), 1200px); margin: 0 auto; }
+body .pde-course-refresh__hero { position: relative; overflow: hidden; padding: clamp(64px, 9vw, 126px) 0 clamp(54px, 7vw, 92px); background: radial-gradient(circle at 90% 18%, rgba(239, 204, 119, .22), transparent 18%), linear-gradient(135deg, #08254f 0%, #123f7b 54%, #0a2c60 100%); }
+body .pde-course-refresh__hero::after { position: absolute; right: -120px; bottom: -150px; width: 430px; height: 430px; border: 1px solid rgba(239, 204, 119, .42); border-radius: 50%; box-shadow: 0 0 0 30px rgba(239, 204, 119, .06), 0 0 0 70px rgba(239, 204, 119, .025); content: ""; pointer-events: none; }
+body .pde-course-refresh__hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(330px, .78fr); gap: clamp(34px, 8vw, 112px); align-items: center; }
+body .pde-course-refresh__eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 17px; color: #ce921d; font-size: 11px; font-weight: 800; letter-spacing: .16em; line-height: 1.2; text-transform: uppercase; }
+body .pde-course-refresh__eyebrow::before { width: 34px; height: 1px; background: currentColor; content: ""; }
+body .pde-course-refresh__intro .pde-course-refresh__eyebrow { color: #efcc77; }
+body .pde-course-refresh h1, body .pde-course-refresh h2, body .pde-course-refresh h3 { margin: 0; font-family: var(--pde-display, Georgia, serif); font-weight: 500; letter-spacing: -.04em; }
+body .pde-course-refresh h1 { max-width: 10ch; color: #fffaf0; font-size: clamp(50px, 6.4vw, 82px); line-height: .97; }
+body .pde-course-refresh__lead { max-width: 57ch; margin: 24px 0 0; color: rgba(255, 250, 240, .81); font-size: 17px; line-height: 1.7; }
+body .pde-course-refresh__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 19px; margin-top: 31px; }
+body .pde-course-refresh__button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 14px 23px; border: 1px solid transparent; border-radius: 999px; font-family: Inter, Arial, sans-serif; font-size: 14px; font-weight: 800; line-height: 1; text-decoration: none; transition: transform .22s ease, box-shadow .22s ease, background .22s ease; }
+body .pde-course-refresh__button:hover, body .pde-course-refresh__button:focus-visible { transform: translateY(-3px); box-shadow: 0 15px 27px rgba(0, 0, 0, .22); outline: 0; }
+body .pde-course-refresh__button--gold { background: linear-gradient(180deg, #f4d277, #ce921d); border-color: #f4d277; color: #08254f; }
+body .pde-course-refresh__text-link { color: #fffaf0; font-size: 14px; font-weight: 800; text-decoration: none; }
+body .pde-course-refresh__text-link span { margin-left: 7px; color: #efcc77; }
+body .pde-course-refresh__route { position: relative; padding: 30px; overflow: hidden; border: 1px solid rgba(239, 204, 119, .55); border-radius: 26px; background: linear-gradient(150deg, #fffdf8 0%, #f7e7c3 100%); box-shadow: 0 26px 48px rgba(0, 0, 0, .2); }
+body .pde-course-refresh__route::after { position: absolute; top: -64px; right: -50px; width: 188px; height: 188px; border: 1px solid rgba(198, 138, 25, .36); border-radius: 50%; box-shadow: 0 0 0 19px rgba(198, 138, 25, .05); content: ""; }
+body .pde-course-refresh__route > * { position: relative; z-index: 1; }
+body .pde-course-refresh__route-label { margin: 0 0 18px; color: #a56b08; font-size: 10px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+body .pde-course-refresh__route ol { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+body .pde-course-refresh__route li { display: grid; grid-template-columns: 33px 1fr; gap: 10px; align-items: center; padding: 12px; border: 1px solid rgba(198, 138, 25, .24); border-radius: 14px; background: rgba(255, 255, 255, .58); color: #5b6d85; font-size: 12px; line-height: 1.42; }
+body .pde-course-refresh__route b { display: grid; width: 33px; height: 33px; border-radius: 50%; background: #f2ce70; color: #113b76; font-family: Inter, Arial, sans-serif; font-size: 11px; place-items: center; }
+body .pde-course-refresh__route strong { margin-right: 4px; color: #113b76; }
+body .pde-course-refresh__route-note { margin: 17px 0 0; padding-top: 15px; border-top: 1px solid rgba(198, 138, 25, .26); color: #68778a; font-size: 12px; line-height: 1.5; }
+body .pde-course-refresh__catalogue { padding: clamp(58px, 8vw, 100px) 0; background: linear-gradient(180deg, #fffaf1 0%, #f8edda 100%); }
+body .pde-course-refresh__section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .62fr); gap: 40px; align-items: end; margin-bottom: 31px; }
+body .pde-course-refresh__section-head h2 { max-width: 13ch; color: #113b76; font-size: clamp(40px, 4.5vw, 62px); line-height: 1.01; }
+body .pde-course-refresh__section-head > p { max-width: 39ch; margin: 0 0 4px; color: #607087; font-size: 15px; line-height: 1.65; }
+body .pde-course-refresh__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+body .pde-course-refresh__card { position: relative; display: flex; min-height: 370px; padding: 25px; overflow: hidden; border: 1px solid rgba(198, 138, 25, .32); border-radius: 22px; background: linear-gradient(145deg, #fffefa, #f9edd7); box-shadow: 0 15px 31px rgba(7, 31, 69, .07); color: #53657d; flex-direction: column; transition: transform .24s ease, box-shadow .24s ease; }
+body .pde-course-refresh__card::after { position: absolute; top: 0; left: 25px; width: 50px; height: 3px; border-radius: 0 0 5px 5px; background: #d69a27; content: ""; }
+body .pde-course-refresh__card:hover { transform: translateY(-5px); box-shadow: 0 22px 38px rgba(7, 31, 69, .12); }
+body .pde-course-refresh__card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 11px; }
+body .pde-course-refresh__card-top span { padding: 7px 10px; border-radius: 999px; background: #fff3d7; color: #a26b0d; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+body .pde-course-refresh__card-top strong { color: #113b76; font-family: Inter, Arial, sans-serif; font-size: 21px; letter-spacing: -.04em; }
+body .pde-course-refresh__card h3 { margin-top: 26px; color: #113b76; font-size: clamp(28px, 2.3vw, 35px); line-height: 1.08; }
+body .pde-course-refresh__card > p { margin: 12px 0 15px; font-size: 14px; line-height: 1.6; }
+body .pde-course-refresh__card ul { display: grid; gap: 7px; margin: 0; padding: 14px 0 0 17px; border-top: 1px solid rgba(198, 138, 25, .24); font-size: 12.5px; line-height: 1.42; }
+body .pde-course-refresh__card li::marker { color: #cf9120; }
+body .pde-course-refresh__card > a { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 17px; color: #113b76; font-size: 13px; font-weight: 800; text-decoration: none; }
+body .pde-course-refresh__card > a span { color: #bd7e10; transition: transform .2s ease; }
+body .pde-course-refresh__card > a:hover span { transform: translateX(4px); }
+body .pde-course-refresh__card--navy { background: linear-gradient(150deg, #082653 0%, #103c77 100%); border-color: rgba(239, 204, 119, .46); box-shadow: 0 17px 31px rgba(7, 31, 69, .18); color: rgba(255, 250, 240, .82); }
+body .pde-course-refresh__card--navy::after { background: #efcc77; }
+body .pde-course-refresh__card--navy .pde-course-refresh__card-top span { background: rgba(239, 204, 119, .15); color: #f3d47f; }
+body .pde-course-refresh__card--navy .pde-course-refresh__card-top strong, body .pde-course-refresh__card--navy h3, body .pde-course-refresh__card--navy > a { color: #fffaf0; }
+body .pde-course-refresh__card--navy ul { border-color: rgba(239, 204, 119, .24); }
+body .pde-course-refresh__card--navy li::marker, body .pde-course-refresh__card--navy > a span { color: #efcc77; }
+body .pde-course-refresh__help { padding: 0 0 72px; background: #f8edda; }
+body .pde-course-refresh__help-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 35px 42px; border: 1px solid rgba(198, 138, 25, .37); border-radius: 25px; background: #fffdf8; box-shadow: 0 18px 35px rgba(7, 31, 69, .08); }
+body .pde-course-refresh__help h2 { color: #113b76; font-size: clamp(32px, 3.5vw, 46px); line-height: 1.04; }
+body .pde-course-refresh__help p:not(.pde-course-refresh__eyebrow) { max-width:55ch; margin: 12px 0 0; color: #607087; font-size: 14px; line-height: 1.6; }
+body .pde-course-refresh__button--outline { border-color: #bd7e10; background: #fff6e3; color: #113b76; white-space: nowrap; }
+@media (max-width: 900px) { body .pde-course-refresh__hero-grid { grid-template-columns: 1fr; gap: 36px; } body .pde-course-refresh__route { max-width: 700px; } body .pde-course-refresh__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { body .pde-course-refresh__wrap { width: min(calc(100% - 32px), 1200px); } body .pde-course-refresh__hero { padding: 55px 0 49px; } body .pde-course-refresh h1 { font-size: clamp(47px, 13vw, 64px); } body .pde-course-refresh__lead { font-size: 15px; } body .pde-course-refresh__route { padding: 22px; border-radius: 21px; } body .pde-course-refresh__section-head { grid-template-columns: 1fr; gap: 16px; } body .pde-course-refresh__section-head h2 { font-size: clamp(37px, 11vw, 49px); } body .pde-course-refresh__grid { grid-template-columns: 1fr; } body .pde-course-refresh__card { min-height: 0; padding: 23px; } body .pde-course-refresh__help { padding-bottom: 46px; } body .pde-course-refresh__help-inner { align-items: flex-start; padding: 26px 23px; border-radius: 21px; flex-direction: column; } }
+@media (prefers-reduced-motion: reduce) { body .pde-course-refresh * { scroll-behavior: auto !important; transition: none !important; } }
