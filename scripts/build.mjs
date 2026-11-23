@@ -29,6 +29,14 @@ const courseData={
 const noIndexRoutes=['/author/','/category/','/verify/','/learn/checkout/','/blog/page/'];
 const escapeAttribute=value=>String(value).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const stripTags=value=>String(value).replace(/<[^>]*>/g,' ').replace(/&#(\d+);/g,(_,code)=>String.fromCodePoint(Number(code))).replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
+const faqMarkup=html=>{
+  const mainEntity=[...html.matchAll(/<details\b[^>]*>\s*<summary>([\s\S]*?)<\/summary>\s*<p[^>]*>([\s\S]*?)<\/p>/gi)].map(([,question,answer])=>({
+    '@type':'Question',
+    name:stripTags(question),
+    acceptedAnswer:{'@type':'Answer',text:stripTags(answer)}
+  })).filter(item=>item.name&&item.acceptedAnswer.text);
+  return mainEntity.length?{'@context':'https://schema.org','@type':'FAQPage',mainEntity}:null;
+};
 function seoMarkup(html,route){
   const title=stripTags(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||'Pure Divine Energy');
   const canonical=`${siteOrigin}${route}`;
@@ -68,6 +76,10 @@ function seoMarkup(html,route){
       provider:{'@type':'Organization',name:'Pure Divine Energy Healing Centre',url:siteOrigin},
       offers:{'@type':'Offer',price:course.price,priceCurrency:'INR',url:canonical}
     }).replace(/</g,'\\u003c')}</script>`);
+  }
+  if(route==='/faq/'){
+    const faq=faqMarkup(html);
+    if(faq)additions.push(`<script type="application/ld+json">${JSON.stringify(faq).replace(/</g,'\\u003c')}</script>`);
   }
   return additions.join('\n');
 }
